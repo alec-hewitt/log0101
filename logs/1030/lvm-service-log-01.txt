@@ -1,0 +1,1202 @@
+2021/02/02 04:04:00.180|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:04:00.181|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:04:00.211|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:04:00.213|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:04:00.228|M|ALG: Turning laser on.
+2021/02/02 04:04:00.287|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:04:00.288|M|ALG: Set Motor Speed.
+2021/02/02 04:04:00.334|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:04:00.336|M|ALG: Get Diagnostics Info.
+2021/02/02 04:04:00.360|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:04:00.362|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2106,"pwr_1_2v":990,"lm20_temp":1253,"pwr_5v":2053,"pwr_2_5v":2040,"pwr_3_3v":2699,"pwr_v_in":881,"pwr_1_25v":0},"top":{"hv":2797,"ad_temp":645,"lm20_temp":1256,"pwr_5v":2097,"pwr_2_5v":2047,"pwr_3_3v":2710,"pwr_5v_raw":2202,"pwr_vccint":981}},"vhv":238,"adc_nf":[14],"adc_stats":[{"mean":14.9,"stddev":0.438}],"ixe":1}
+2021/02/02 04:04:00.364|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:04:00.385|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:04:00.387|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:04:00.408|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:04:00.412|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:04:00.413|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:04:01.601|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:04:01.601|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:04:01.788|M|ALG: Total 1442 Valid of 19200 Total Pts are collected.
+2021/02/02 04:04:01.790|M|ALG: 17758 points have zero distance
+2021/02/02 04:04:01.791|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:04:01.791|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:04:01.792|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:04:01.793|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:04:01.795|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:04:01.796|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:04:01.797|M|ALG: Collect raw data was successful
+2021/02/02 04:04:01.876|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:04:01.877|M|ALG: Points : 412
+2021/02/02 04:04:01.877|M|ALG: *****************************************************
+2021/02/02 04:04:01.878|M|ALG: 
+2021/02/02 04:04:01.879|M|Scan Interval Info [1]: delayTillScan = 119, delayTillRelayOn = 89 (preheat = 30)
+2021/02/02 04:04:01.881|M|=========Scan Operation Complete ==================
+2021/02/02 04:04:01.881|M|RLY: CG Device type: 2
+2021/02/02 04:04:01.882|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:04:01.907|M|========= Building JSON ==================
+2021/02/02 04:04:01.908|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:04:01.909|M|Building JSON: report.raw_scan_output.pointsCount         = 1442
+2021/02/02 04:04:01.909|M|Building JSON: report.compressed_scan_output.pointsCount  = 412
+2021/02/02 04:04:01.910|M|Building JSON -- temp history
+2021/02/02 04:04:01.917|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:04:01.918|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:04:02.920|M|Temp Humid Sensor Values:    Humid:19.89 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:04:02.928|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:04:03.931|M|Temp Humid Sensor Values:    Humid:19.86 RH, C:23.30 C, F:73.95 F
+2021/02/02 04:04:03.932|M|c: 23.304340, f: 73.947815, h: 19.862669
+2021/02/02 04:04:03.938|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:04:03.939|M|Building JSON -- Cell Status
+2021/02/02 04:04:03.982|M|WWAN signal strength is -116, ecio quality is -12
+2021/02/02 04:04:03.984|M|Building JSON: CloudGate supply voltage in mV: 11678
+2021/02/02 04:04:03.985|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:04:04.003|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:04:04.004|M|ALG: relative humidity value: 19.86
+2021/02/02 04:04:04.134|M|======================JSON File Prepared ============================
+2021/02/02 04:04:04.135|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:04:04.136|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:04:04.137|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:04:04.146|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:04:05.891|M|Server Response: HTTP Code = 304.
+2021/02/02 04:04:05.892|M|Server Response: Config file not modified.
+2021/02/02 04:04:05.897|M|APP: Config version not changed. result = 10212
+2021/02/02 04:04:05.898|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:04:05.899|M|ALG: Send Pending Reports ...
+2021/02/02 04:04:06.032|M|ALG:  28.7 kB file zips to   3.2 kB
+2021/02/02 04:04:06.033|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_040401.json' to '/mnt/data/lvm/json_archive/output_20210202_040401.zip'.
+2021/02/02 04:04:06.043|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:04:06.044|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:04:06.044|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:04:06.045|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:04:06.046|M|CLOUD: Perform CURL Post
+2021/02/02 04:04:10.133|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:04:10.134|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:04:10.135|M|CLOUD: CURL formfree completed
+2021/02/02 04:04:10.136|M|CLOUD: Server Response is GOOD
+2021/02/02 04:04:10.150|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_040401.zip'
+2021/02/02 04:04:10.156|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:04:10.157|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:04:10.158|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 110
+2021/02/02 04:04:10.159|M|====================== Cloud Server Complete ===============
+2021/02/02 04:04:10.160|M|Remove RAW DATA File
+2021/02/02 04:04:10.177|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:05:30.099|M|RLY: CG Device type: 2
+2021/02/02 04:05:30.100|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:06:00.006|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:06:00.007|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:06:00.016|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:06:00.017|M|Waiting till interface is up and connected ...
+2021/02/02 04:06:00.062|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:06:00.063|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:06:00.064|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:06:00.153|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:06:00.154|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:06:00.155|M|ALG: Collect data from UDP ...
+2021/02/02 04:06:00.156|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:06:00.157|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:06:00.158|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:06:00.190|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:06:00.192|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:06:00.206|M|ALG: Turning laser on.
+2021/02/02 04:06:00.271|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:06:00.273|M|ALG: Set Motor Speed.
+2021/02/02 04:06:00.334|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:06:00.337|M|ALG: Get Diagnostics Info.
+2021/02/02 04:06:00.363|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:06:00.365|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2109,"pwr_1_2v":991,"lm20_temp":1258,"pwr_5v":2047,"pwr_2_5v":2048,"pwr_3_3v":2696,"pwr_v_in":882,"pwr_1_25v":0},"top":{"hv":2792,"ad_temp":645,"lm20_temp":1255,"pwr_5v":2098,"pwr_2_5v":2047,"pwr_3_3v":2710,"pwr_5v_raw":2217,"pwr_vccint":981}},"vhv":238,"adc_nf":[14],"adc_stats":[{"mean":14.8,"stddev":0.516}],"ixe":1}
+2021/02/02 04:06:00.369|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:06:00.391|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:06:00.392|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:06:00.414|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:06:00.419|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:06:00.421|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:06:00.638|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:06:00.639|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:06:00.828|M|ALG: Total 1503 Valid of 19200 Total Pts are collected.
+2021/02/02 04:06:00.829|M|ALG: 17697 points have zero distance
+2021/02/02 04:06:00.830|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:06:00.831|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:06:00.832|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:06:00.832|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:06:00.833|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:06:00.834|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:06:00.835|M|ALG: Collect raw data was successful
+2021/02/02 04:06:00.910|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:06:00.911|M|ALG: Points : 429
+2021/02/02 04:06:00.911|M|ALG: *****************************************************
+2021/02/02 04:06:00.912|M|ALG: 
+2021/02/02 04:06:00.913|M|Scan Interval Info [1]: delayTillScan = 120, delayTillRelayOn = 90 (preheat = 30)
+2021/02/02 04:06:00.914|M|=========Scan Operation Complete ==================
+2021/02/02 04:06:00.915|M|RLY: CG Device type: 2
+2021/02/02 04:06:00.916|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:06:00.941|M|========= Building JSON ==================
+2021/02/02 04:06:00.942|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:06:00.943|M|Building JSON: report.raw_scan_output.pointsCount         = 1503
+2021/02/02 04:06:00.944|M|Building JSON: report.compressed_scan_output.pointsCount  = 429
+2021/02/02 04:06:00.945|M|Building JSON -- temp history
+2021/02/02 04:06:00.951|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:06:00.953|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:06:01.955|M|Temp Humid Sensor Values:    Humid:19.83 RH, C:23.30 C, F:73.95 F
+2021/02/02 04:06:01.961|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:06:02.964|M|Temp Humid Sensor Values:    Humid:19.86 RH, C:23.27 C, F:73.89 F
+2021/02/02 04:06:02.965|M|c: 23.274967, f: 73.894943, h: 19.859617
+2021/02/02 04:06:02.971|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:06:02.973|M|Building JSON -- Cell Status
+2021/02/02 04:06:03.016|M|WWAN signal strength is -112, ecio quality is -12
+2021/02/02 04:06:03.018|M|Building JSON: CloudGate supply voltage in mV: 11678
+2021/02/02 04:06:03.020|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:06:03.038|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:06:03.039|M|ALG: relative humidity value: 19.86
+2021/02/02 04:06:03.158|M|======================JSON File Prepared ============================
+2021/02/02 04:06:03.158|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:06:03.159|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:06:03.160|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:06:03.170|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:06:05.122|M|Server Response: HTTP Code = 304.
+2021/02/02 04:06:05.123|M|Server Response: Config file not modified.
+2021/02/02 04:06:05.128|M|APP: Config version not changed. result = 10212
+2021/02/02 04:06:05.129|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:06:05.130|M|ALG: Send Pending Reports ...
+2021/02/02 04:06:05.268|M|ALG:  29.8 kB file zips to   3.3 kB
+2021/02/02 04:06:05.269|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_040600.json' to '/mnt/data/lvm/json_archive/output_20210202_040600.zip'.
+2021/02/02 04:06:05.279|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:06:05.280|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:06:05.280|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:06:05.281|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:06:05.282|M|CLOUD: Perform CURL Post
+2021/02/02 04:06:08.962|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:06:08.963|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:06:08.964|M|CLOUD: CURL formfree completed
+2021/02/02 04:06:08.964|M|CLOUD: Server Response is GOOD
+2021/02/02 04:06:08.969|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_040600.zip'
+2021/02/02 04:06:08.972|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:06:08.973|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:06:08.974|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 112
+2021/02/02 04:06:08.975|M|====================== Cloud Server Complete ===============
+2021/02/02 04:06:08.975|M|Remove RAW DATA File
+2021/02/02 04:06:08.978|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:07:30.001|M|RLY: CG Device type: 2
+2021/02/02 04:07:30.001|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:08:00.047|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:08:00.048|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:08:00.055|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:08:00.056|M|Waiting till interface is up and connected ...
+2021/02/02 04:08:00.093|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:08:00.093|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:08:00.094|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:08:00.172|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:08:00.173|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:08:00.174|M|ALG: Collect data from UDP ...
+2021/02/02 04:08:00.175|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:08:00.176|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:08:00.177|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:08:00.210|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:08:00.212|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:08:00.229|M|ALG: Turning laser on.
+2021/02/02 04:08:00.286|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:08:00.288|M|ALG: Set Motor Speed.
+2021/02/02 04:08:00.332|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:08:00.334|M|ALG: Get Diagnostics Info.
+2021/02/02 04:08:00.359|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:08:00.361|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2114,"pwr_1_2v":987,"lm20_temp":1252,"pwr_5v":2053,"pwr_2_5v":2048,"pwr_3_3v":2704,"pwr_v_in":881,"pwr_1_25v":0},"top":{"hv":2794,"ad_temp":646,"lm20_temp":1256,"pwr_5v":2098,"pwr_2_5v":2047,"pwr_3_3v":2714,"pwr_5v_raw":2215,"pwr_vccint":981}},"vhv":238,"adc_nf":[14],"adc_stats":[{"mean":14.7,"stddev":0.484}],"ixe":1}
+2021/02/02 04:08:00.364|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:08:00.384|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:08:00.385|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:08:00.406|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:08:00.409|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:08:00.410|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:08:01.065|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:08:01.067|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:08:01.263|M|ALG: Total 1587 Valid of 19200 Total Pts are collected.
+2021/02/02 04:08:01.264|M|ALG: 17613 points have zero distance
+2021/02/02 04:08:01.265|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:08:01.266|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:08:01.266|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:08:01.267|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:08:01.268|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:08:01.269|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:08:01.270|M|ALG: Collect raw data was successful
+2021/02/02 04:08:01.350|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:08:01.351|M|ALG: Points : 430
+2021/02/02 04:08:01.352|M|ALG: *****************************************************
+2021/02/02 04:08:01.353|M|ALG: 
+2021/02/02 04:08:01.354|M|Scan Interval Info [1]: delayTillScan = 119, delayTillRelayOn = 89 (preheat = 30)
+2021/02/02 04:08:01.356|M|=========Scan Operation Complete ==================
+2021/02/02 04:08:01.357|M|RLY: CG Device type: 2
+2021/02/02 04:08:01.358|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:08:01.384|M|========= Building JSON ==================
+2021/02/02 04:08:01.385|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:08:01.386|M|Building JSON: report.raw_scan_output.pointsCount         = 1587
+2021/02/02 04:08:01.387|M|Building JSON: report.compressed_scan_output.pointsCount  = 430
+2021/02/02 04:08:01.388|M|Building JSON -- temp history
+2021/02/02 04:08:01.394|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:08:01.395|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:08:02.398|M|Temp Humid Sensor Values:    Humid:19.89 RH, C:23.29 C, F:73.92 F
+2021/02/02 04:08:02.404|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:08:03.408|M|Temp Humid Sensor Values:    Humid:19.89 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:08:03.409|M|c: 23.317694, f: 73.971848, h: 19.894712
+2021/02/02 04:08:03.466|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:08:03.467|M|Building JSON -- Cell Status
+2021/02/02 04:08:03.591|M|WWAN signal strength is -115, ecio quality is -12
+2021/02/02 04:08:03.593|M|Building JSON: CloudGate supply voltage in mV: 11678
+2021/02/02 04:08:03.595|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:08:03.610|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:08:03.611|M|ALG: relative humidity value: 19.89
+2021/02/02 04:08:03.839|M|======================JSON File Prepared ============================
+2021/02/02 04:08:03.840|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:08:03.841|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:08:03.842|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:08:03.864|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:08:05.548|M|Server Response: HTTP Code = 304.
+2021/02/02 04:08:05.549|M|Server Response: Config file not modified.
+2021/02/02 04:08:05.553|M|APP: Config version not changed. result = 10212
+2021/02/02 04:08:05.554|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:08:05.555|M|ALG: Send Pending Reports ...
+2021/02/02 04:08:05.700|M|ALG:  29.9 kB file zips to   3.3 kB
+2021/02/02 04:08:05.701|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_040801.json' to '/mnt/data/lvm/json_archive/output_20210202_040801.zip'.
+2021/02/02 04:08:05.710|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:08:05.711|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:08:05.712|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:08:05.713|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:08:05.714|M|CLOUD: Perform CURL Post
+2021/02/02 04:08:07.789|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:08:07.790|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:08:07.791|M|CLOUD: CURL formfree completed
+2021/02/02 04:08:07.792|M|CLOUD: Server Response is GOOD
+2021/02/02 04:08:07.796|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_040801.zip'
+2021/02/02 04:08:07.799|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:08:07.800|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:08:07.801|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 113
+2021/02/02 04:08:07.802|M|====================== Cloud Server Complete ===============
+2021/02/02 04:08:07.803|M|Remove RAW DATA File
+2021/02/02 04:08:07.805|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:09:30.041|M|RLY: CG Device type: 2
+2021/02/02 04:09:30.042|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:10:00.054|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:10:00.055|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:10:00.062|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:10:00.063|M|Waiting till interface is up and connected ...
+2021/02/02 04:10:00.099|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:10:00.100|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:10:00.100|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:10:00.179|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:10:00.180|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:10:00.181|M|ALG: Collect data from UDP ...
+2021/02/02 04:10:00.182|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:10:00.183|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:10:00.184|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:10:00.210|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:10:00.212|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:10:00.227|M|ALG: Turning laser on.
+2021/02/02 04:10:00.285|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:10:00.295|M|ALG: Set Motor Speed.
+2021/02/02 04:10:00.330|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:10:00.331|M|ALG: Get Diagnostics Info.
+2021/02/02 04:10:00.357|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:10:00.358|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2109,"pwr_1_2v":988,"lm20_temp":1251,"pwr_5v":2050,"pwr_2_5v":2039,"pwr_3_3v":2700,"pwr_v_in":879,"pwr_1_25v":0},"top":{"hv":2797,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2096,"pwr_2_5v":2047,"pwr_3_3v":2711,"pwr_5v_raw":2211,"pwr_vccint":981}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.8,"stddev":0.469}],"ixe":1}
+2021/02/02 04:10:00.361|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:10:00.381|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:10:00.383|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:10:00.403|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:10:00.405|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:10:00.407|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:10:02.391|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:10:02.392|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:10:02.593|M|ALG: Total 1668 Valid of 19200 Total Pts are collected.
+2021/02/02 04:10:02.594|M|ALG: 17532 points have zero distance
+2021/02/02 04:10:02.595|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:10:02.596|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:10:02.598|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:10:02.599|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:10:02.599|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:10:02.600|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:10:02.601|M|ALG: Collect raw data was successful
+2021/02/02 04:10:02.691|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:10:02.692|M|ALG: Points : 436
+2021/02/02 04:10:02.693|M|ALG: *****************************************************
+2021/02/02 04:10:02.694|M|ALG: 
+2021/02/02 04:10:02.695|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
+2021/02/02 04:10:02.697|M|=========Scan Operation Complete ==================
+2021/02/02 04:10:02.697|M|RLY: CG Device type: 2
+2021/02/02 04:10:02.698|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:10:02.722|M|========= Building JSON ==================
+2021/02/02 04:10:02.723|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:10:02.723|M|Building JSON: report.raw_scan_output.pointsCount         = 1668
+2021/02/02 04:10:02.725|M|Building JSON: report.compressed_scan_output.pointsCount  = 436
+2021/02/02 04:10:02.726|M|Building JSON -- temp history
+2021/02/02 04:10:02.732|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:10:02.734|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:10:03.737|M|Temp Humid Sensor Values:    Humid:19.90 RH, C:23.33 C, F:74.00 F
+2021/02/02 04:10:03.743|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:10:04.745|M|Temp Humid Sensor Values:    Humid:19.88 RH, C:23.29 C, F:73.92 F
+2021/02/02 04:10:04.748|M|c: 23.288319, f: 73.918976, h: 19.877928
+2021/02/02 04:10:04.754|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:10:04.755|M|Building JSON -- Cell Status
+2021/02/02 04:10:04.801|M|WWAN signal strength is -116, ecio quality is -17
+2021/02/02 04:10:04.803|M|Building JSON: CloudGate supply voltage in mV: 11696
+2021/02/02 04:10:04.804|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:10:04.819|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:10:04.820|M|ALG: relative humidity value: 19.88
+2021/02/02 04:10:04.941|M|======================JSON File Prepared ============================
+2021/02/02 04:10:04.942|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:10:04.943|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:10:04.944|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:10:04.954|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:10:06.622|M|Server Response: HTTP Code = 304.
+2021/02/02 04:10:06.623|M|Server Response: Config file not modified.
+2021/02/02 04:10:06.627|M|APP: Config version not changed. result = 10212
+2021/02/02 04:10:06.628|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:10:06.629|M|ALG: Send Pending Reports ...
+2021/02/02 04:10:06.775|M|ALG:  30.3 kB file zips to   3.3 kB
+2021/02/02 04:10:06.777|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_041002.json' to '/mnt/data/lvm/json_archive/output_20210202_041002.zip'.
+2021/02/02 04:10:06.788|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:10:06.789|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:10:06.790|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:10:06.791|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:10:06.792|M|CLOUD: Perform CURL Post
+2021/02/02 04:10:09.150|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:10:09.151|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:10:09.152|M|CLOUD: CURL formfree completed
+2021/02/02 04:10:09.153|M|CLOUD: Server Response is GOOD
+2021/02/02 04:10:09.157|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_041002.zip'
+2021/02/02 04:10:09.159|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:10:09.160|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:10:09.161|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 111
+2021/02/02 04:10:09.162|M|====================== Cloud Server Complete ===============
+2021/02/02 04:10:09.162|M|Remove RAW DATA File
+2021/02/02 04:10:09.165|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:11:30.093|M|RLY: CG Device type: 2
+2021/02/02 04:11:30.094|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:12:00.007|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:12:00.008|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:12:00.015|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:12:00.016|M|Waiting till interface is up and connected ...
+2021/02/02 04:12:00.051|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:12:00.052|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:12:00.053|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:12:00.131|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:12:00.132|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:12:00.133|M|ALG: Collect data from UDP ...
+2021/02/02 04:12:00.134|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:12:00.135|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:12:00.136|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:12:00.170|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:12:00.172|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:12:00.189|M|ALG: Turning laser on.
+2021/02/02 04:12:00.248|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:12:00.250|M|ALG: Set Motor Speed.
+2021/02/02 04:12:00.294|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:12:00.295|M|ALG: Get Diagnostics Info.
+2021/02/02 04:12:00.320|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:12:00.322|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2116,"pwr_1_2v":983,"lm20_temp":1251,"pwr_5v":2052,"pwr_2_5v":2040,"pwr_3_3v":2699,"pwr_v_in":881,"pwr_1_25v":0},"top":{"hv":2796,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2096,"pwr_2_5v":2047,"pwr_3_3v":2709,"pwr_5v_raw":2203,"pwr_vccint":981}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.9,"stddev":0.656}],"ixe":1}
+2021/02/02 04:12:00.325|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:12:00.358|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:12:00.360|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:12:00.382|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:12:00.384|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:12:00.385|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:12:02.008|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:12:02.009|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:12:02.370|M|ALG: Total 1646 Valid of 19200 Total Pts are collected.
+2021/02/02 04:12:02.370|M|ALG: 17554 points have zero distance
+2021/02/02 04:12:02.371|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:12:02.372|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:12:02.373|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:12:02.374|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:12:02.375|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:12:02.375|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:12:02.376|M|ALG: Collect raw data was successful
+2021/02/02 04:12:02.470|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:12:02.471|M|ALG: Points : 445
+2021/02/02 04:12:02.472|M|ALG: *****************************************************
+2021/02/02 04:12:02.472|M|ALG: 
+2021/02/02 04:12:02.473|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
+2021/02/02 04:12:02.475|M|=========Scan Operation Complete ==================
+2021/02/02 04:12:02.476|M|RLY: CG Device type: 2
+2021/02/02 04:12:02.477|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:12:02.501|M|========= Building JSON ==================
+2021/02/02 04:12:02.502|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:12:02.503|M|Building JSON: report.raw_scan_output.pointsCount         = 1646
+2021/02/02 04:12:02.503|M|Building JSON: report.compressed_scan_output.pointsCount  = 445
+2021/02/02 04:12:02.505|M|Building JSON -- temp history
+2021/02/02 04:12:02.511|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:12:02.512|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:12:03.515|M|Temp Humid Sensor Values:    Humid:19.90 RH, C:23.33 C, F:74.00 F
+2021/02/02 04:12:03.538|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:12:04.558|M|Temp Humid Sensor Values:    Humid:19.93 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:12:04.559|M|c: 23.317694, f: 73.971848, h: 19.928282
+2021/02/02 04:12:04.568|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:12:04.569|M|Building JSON -- Cell Status
+2021/02/02 04:12:04.612|M|WWAN signal strength is -116, ecio quality is -13
+2021/02/02 04:12:04.614|M|Building JSON: CloudGate supply voltage in mV: 11687
+2021/02/02 04:12:04.616|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:12:04.633|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:12:04.633|M|ALG: relative humidity value: 19.93
+2021/02/02 04:12:04.756|M|======================JSON File Prepared ============================
+2021/02/02 04:12:04.757|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:12:04.758|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:12:04.759|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:12:04.769|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:12:06.374|M|Server Response: HTTP Code = 304.
+2021/02/02 04:12:06.374|M|Server Response: Config file not modified.
+2021/02/02 04:12:06.379|M|APP: Config version not changed. result = 10212
+2021/02/02 04:12:06.380|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:12:06.381|M|ALG: Send Pending Reports ...
+2021/02/02 04:12:06.544|M|ALG:  31.0 kB file zips to   3.4 kB
+2021/02/02 04:12:06.545|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_041202.json' to '/mnt/data/lvm/json_archive/output_20210202_041202.zip'.
+2021/02/02 04:12:06.554|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:12:06.555|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:12:06.556|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:12:06.557|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:12:06.558|M|CLOUD: Perform CURL Post
+2021/02/02 04:12:08.814|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:12:08.815|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:12:08.816|M|CLOUD: CURL formfree completed
+2021/02/02 04:12:08.817|M|CLOUD: Server Response is GOOD
+2021/02/02 04:12:08.821|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_041202.zip'
+2021/02/02 04:12:08.824|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:12:08.825|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:12:08.826|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 112
+2021/02/02 04:12:08.827|M|====================== Cloud Server Complete ===============
+2021/02/02 04:12:08.828|M|Remove RAW DATA File
+2021/02/02 04:12:08.830|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:13:30.061|M|RLY: CG Device type: 2
+2021/02/02 04:13:30.062|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:14:00.070|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:14:00.071|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:14:00.079|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:14:00.079|M|Waiting till interface is up and connected ...
+2021/02/02 04:14:00.116|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:14:00.117|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:14:00.118|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:14:00.196|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:14:00.197|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:14:00.198|M|ALG: Collect data from UDP ...
+2021/02/02 04:14:00.199|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:14:00.200|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:14:00.201|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:14:00.231|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:14:00.232|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:14:00.249|M|ALG: Turning laser on.
+2021/02/02 04:14:00.304|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:14:00.305|M|ALG: Set Motor Speed.
+2021/02/02 04:14:00.351|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:14:00.353|M|ALG: Get Diagnostics Info.
+2021/02/02 04:14:00.379|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:14:00.381|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2114,"pwr_1_2v":988,"lm20_temp":1249,"pwr_5v":2048,"pwr_2_5v":2051,"pwr_3_3v":2693,"pwr_v_in":880,"pwr_1_25v":0},"top":{"hv":2799,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2099,"pwr_2_5v":2048,"pwr_3_3v":2709,"pwr_5v_raw":2228,"pwr_vccint":981}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.8,"stddev":0.438}],"ixe":1}
+2021/02/02 04:14:00.384|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:14:00.405|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:14:00.406|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:14:00.427|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:14:00.429|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:14:00.430|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:14:02.421|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:14:02.422|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:14:02.619|M|ALG: Total 1604 Valid of 19200 Total Pts are collected.
+2021/02/02 04:14:02.620|M|ALG: 17596 points have zero distance
+2021/02/02 04:14:02.621|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:14:02.622|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:14:02.623|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:14:02.624|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:14:02.625|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:14:02.626|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:14:02.627|M|ALG: Collect raw data was successful
+2021/02/02 04:14:02.719|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:14:02.719|M|ALG: Points : 426
+2021/02/02 04:14:02.720|M|ALG: *****************************************************
+2021/02/02 04:14:02.721|M|ALG: 
+2021/02/02 04:14:02.722|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
+2021/02/02 04:14:02.723|M|=========Scan Operation Complete ==================
+2021/02/02 04:14:02.724|M|RLY: CG Device type: 2
+2021/02/02 04:14:02.725|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:14:02.749|M|========= Building JSON ==================
+2021/02/02 04:14:02.750|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:14:02.750|M|Building JSON: report.raw_scan_output.pointsCount         = 1604
+2021/02/02 04:14:02.751|M|Building JSON: report.compressed_scan_output.pointsCount  = 426
+2021/02/02 04:14:02.752|M|Building JSON -- temp history
+2021/02/02 04:14:02.759|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:14:02.760|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:14:03.763|M|Temp Humid Sensor Values:    Humid:19.90 RH, C:23.33 C, F:74.00 F
+2021/02/02 04:14:03.769|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:14:04.771|M|Temp Humid Sensor Values:    Humid:19.86 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:14:04.772|M|c: 23.317694, f: 73.971848, h: 19.864195
+2021/02/02 04:14:04.779|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:14:04.780|M|Building JSON -- Cell Status
+2021/02/02 04:14:04.826|M|WWAN signal strength is -113, ecio quality is -13
+2021/02/02 04:14:04.829|M|Building JSON: CloudGate supply voltage in mV: 11696
+2021/02/02 04:14:04.830|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:14:04.849|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:14:04.850|M|ALG: relative humidity value: 19.86
+2021/02/02 04:14:04.980|M|======================JSON File Prepared ============================
+2021/02/02 04:14:04.980|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:14:04.981|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:14:04.982|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:14:04.992|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:14:06.821|M|Server Response: HTTP Code = 304.
+2021/02/02 04:14:06.822|M|Server Response: Config file not modified.
+2021/02/02 04:14:06.826|M|APP: Config version not changed. result = 10212
+2021/02/02 04:14:06.827|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:14:06.828|M|ALG: Send Pending Reports ...
+2021/02/02 04:14:06.980|M|ALG:  29.7 kB file zips to   3.2 kB
+2021/02/02 04:14:06.981|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_041402.json' to '/mnt/data/lvm/json_archive/output_20210202_041402.zip'.
+2021/02/02 04:14:06.991|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:14:06.992|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:14:06.993|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:14:06.994|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:14:06.995|M|CLOUD: Perform CURL Post
+2021/02/02 04:14:09.006|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:14:09.007|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:14:09.008|M|CLOUD: CURL formfree completed
+2021/02/02 04:14:09.009|M|CLOUD: Server Response is GOOD
+2021/02/02 04:14:09.013|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_041402.zip'
+2021/02/02 04:14:09.016|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:14:09.017|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:14:09.018|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 111
+2021/02/02 04:14:09.019|M|====================== Cloud Server Complete ===============
+2021/02/02 04:14:09.020|M|Remove RAW DATA File
+2021/02/02 04:14:09.022|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:15:30.085|M|RLY: CG Device type: 2
+2021/02/02 04:15:30.086|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:16:00.012|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:16:00.013|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:16:00.021|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:16:00.022|M|Waiting till interface is up and connected ...
+2021/02/02 04:16:00.059|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:16:00.069|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:16:00.070|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:16:00.149|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:16:00.150|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:16:00.151|M|ALG: Collect data from UDP ...
+2021/02/02 04:16:00.152|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:16:00.153|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:16:00.154|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:16:00.179|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:16:00.181|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:16:00.196|M|ALG: Turning laser on.
+2021/02/02 04:16:00.261|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:16:00.263|M|ALG: Set Motor Speed.
+2021/02/02 04:16:00.300|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:16:00.302|M|ALG: Get Diagnostics Info.
+2021/02/02 04:16:00.327|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:16:00.329|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2117,"pwr_1_2v":987,"lm20_temp":1250,"pwr_5v":2052,"pwr_2_5v":2041,"pwr_3_3v":2704,"pwr_v_in":879,"pwr_1_25v":0},"top":{"hv":2795,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2096,"pwr_2_5v":2047,"pwr_3_3v":2708,"pwr_5v_raw":2191,"pwr_vccint":981}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.6,"stddev":0.484}],"ixe":1}
+2021/02/02 04:16:00.332|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:16:00.353|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:16:00.354|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:16:00.374|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:16:00.377|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:16:00.378|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:16:01.474|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:16:01.475|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:16:01.672|M|ALG: Total 1629 Valid of 19200 Total Pts are collected.
+2021/02/02 04:16:01.673|M|ALG: 17571 points have zero distance
+2021/02/02 04:16:01.673|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:16:01.674|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:16:01.675|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:16:01.676|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:16:01.677|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:16:01.678|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:16:01.679|M|ALG: Collect raw data was successful
+2021/02/02 04:16:01.756|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:16:01.757|M|ALG: Points : 414
+2021/02/02 04:16:01.757|M|ALG: *****************************************************
+2021/02/02 04:16:01.758|M|ALG: 
+2021/02/02 04:16:01.759|M|Scan Interval Info [1]: delayTillScan = 119, delayTillRelayOn = 89 (preheat = 30)
+2021/02/02 04:16:01.761|M|=========Scan Operation Complete ==================
+2021/02/02 04:16:01.762|M|RLY: CG Device type: 2
+2021/02/02 04:16:01.762|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:16:01.788|M|========= Building JSON ==================
+2021/02/02 04:16:01.789|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:16:01.790|M|Building JSON: report.raw_scan_output.pointsCount         = 1629
+2021/02/02 04:16:01.791|M|Building JSON: report.compressed_scan_output.pointsCount  = 414
+2021/02/02 04:16:01.792|M|Building JSON -- temp history
+2021/02/02 04:16:01.799|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:16:01.800|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:16:02.802|M|Temp Humid Sensor Values:    Humid:19.93 RH, C:23.33 C, F:74.00 F
+2021/02/02 04:16:02.810|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:16:03.813|M|Temp Humid Sensor Values:    Humid:19.86 RH, C:23.30 C, F:73.95 F
+2021/02/02 04:16:03.814|M|c: 23.304340, f: 73.947815, h: 19.862669
+2021/02/02 04:16:03.820|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:16:03.821|M|Building JSON -- Cell Status
+2021/02/02 04:16:03.867|M|WWAN signal strength is -106, ecio quality is -13
+2021/02/02 04:16:03.869|M|Building JSON: CloudGate supply voltage in mV: 11696
+2021/02/02 04:16:03.871|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:16:03.885|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:16:03.891|M|ALG: relative humidity value: 19.86
+2021/02/02 04:16:04.005|M|======================JSON File Prepared ============================
+2021/02/02 04:16:04.006|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:16:04.007|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:16:04.007|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:16:04.018|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:16:05.942|M|Server Response: HTTP Code = 304.
+2021/02/02 04:16:05.943|M|Server Response: Config file not modified.
+2021/02/02 04:16:05.947|M|APP: Config version not changed. result = 10212
+2021/02/02 04:16:05.949|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:16:05.949|M|ALG: Send Pending Reports ...
+2021/02/02 04:16:06.081|M|ALG:  28.8 kB file zips to   3.2 kB
+2021/02/02 04:16:06.082|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_041601.json' to '/mnt/data/lvm/json_archive/output_20210202_041601.zip'.
+2021/02/02 04:16:06.091|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:16:06.092|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:16:06.093|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:16:06.094|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:16:06.094|M|CLOUD: Perform CURL Post
+2021/02/02 04:16:08.182|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:16:08.183|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:16:08.184|M|CLOUD: CURL formfree completed
+2021/02/02 04:16:08.185|M|CLOUD: Server Response is GOOD
+2021/02/02 04:16:08.189|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_041601.zip'
+2021/02/02 04:16:08.192|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:16:08.193|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:16:08.194|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 112
+2021/02/02 04:16:08.194|M|====================== Cloud Server Complete ===============
+2021/02/02 04:16:08.195|M|Remove RAW DATA File
+2021/02/02 04:16:08.198|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:17:30.022|M|RLY: CG Device type: 2
+2021/02/02 04:17:30.023|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:18:00.071|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:18:00.072|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:18:00.080|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:18:00.081|M|Waiting till interface is up and connected ...
+2021/02/02 04:18:00.117|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:18:00.118|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:18:00.119|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:18:00.197|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:18:00.198|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:18:00.198|M|ALG: Collect data from UDP ...
+2021/02/02 04:18:00.199|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:18:00.200|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:18:00.201|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:18:00.229|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:18:00.231|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:18:00.246|M|ALG: Turning laser on.
+2021/02/02 04:18:00.304|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:18:00.306|M|ALG: Set Motor Speed.
+2021/02/02 04:18:00.348|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:18:00.349|M|ALG: Get Diagnostics Info.
+2021/02/02 04:18:00.374|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:18:00.376|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2128,"pwr_1_2v":986,"lm20_temp":1251,"pwr_5v":2053,"pwr_2_5v":2048,"pwr_3_3v":2691,"pwr_v_in":880,"pwr_1_25v":0},"top":{"hv":2794,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2096,"pwr_2_5v":2047,"pwr_3_3v":2710,"pwr_5v_raw":2210,"pwr_vccint":981}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.7,"stddev":0.5}],"ixe":1}
+2021/02/02 04:18:00.379|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:18:00.400|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:18:00.402|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:18:00.433|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:18:00.446|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:18:00.447|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:18:01.938|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:18:01.939|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:18:02.138|M|ALG: Total 1712 Valid of 19200 Total Pts are collected.
+2021/02/02 04:18:02.138|M|ALG: 17488 points have zero distance
+2021/02/02 04:18:02.139|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:18:02.140|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:18:02.141|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:18:02.142|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:18:02.143|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:18:02.143|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:18:02.144|M|ALG: Collect raw data was successful
+2021/02/02 04:18:02.237|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:18:02.238|M|ALG: Points : 427
+2021/02/02 04:18:02.239|M|ALG: *****************************************************
+2021/02/02 04:18:02.240|M|ALG: 
+2021/02/02 04:18:02.241|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
+2021/02/02 04:18:02.242|M|=========Scan Operation Complete ==================
+2021/02/02 04:18:02.243|M|RLY: CG Device type: 2
+2021/02/02 04:18:02.244|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:18:02.267|M|========= Building JSON ==================
+2021/02/02 04:18:02.268|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:18:02.269|M|Building JSON: report.raw_scan_output.pointsCount         = 1712
+2021/02/02 04:18:02.270|M|Building JSON: report.compressed_scan_output.pointsCount  = 427
+2021/02/02 04:18:02.271|M|Building JSON -- temp history
+2021/02/02 04:18:02.278|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:18:02.279|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:18:03.281|M|Temp Humid Sensor Values:    Humid:19.91 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:18:03.288|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:18:04.290|M|Temp Humid Sensor Values:    Humid:19.89 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:18:04.291|M|c: 23.317694, f: 73.971848, h: 19.894712
+2021/02/02 04:18:04.297|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:18:04.298|M|Building JSON -- Cell Status
+2021/02/02 04:18:04.343|M|WWAN signal strength is -118, ecio quality is -13
+2021/02/02 04:18:04.345|M|Building JSON: CloudGate supply voltage in mV: 11687
+2021/02/02 04:18:04.346|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:18:04.361|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:18:04.362|M|ALG: relative humidity value: 19.89
+2021/02/02 04:18:04.483|M|======================JSON File Prepared ============================
+2021/02/02 04:18:04.484|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:18:04.485|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:18:04.486|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:18:04.495|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:18:06.237|M|Server Response: HTTP Code = 304.
+2021/02/02 04:18:06.238|M|Server Response: Config file not modified.
+2021/02/02 04:18:06.242|M|APP: Config version not changed. result = 10212
+2021/02/02 04:18:06.243|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:18:06.244|M|ALG: Send Pending Reports ...
+2021/02/02 04:18:06.385|M|ALG:  29.8 kB file zips to   3.3 kB
+2021/02/02 04:18:06.386|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_041802.json' to '/mnt/data/lvm/json_archive/output_20210202_041802.zip'.
+2021/02/02 04:18:06.395|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:18:06.396|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:18:06.397|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:18:06.398|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:18:06.399|M|CLOUD: Perform CURL Post
+2021/02/02 04:18:08.486|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:18:08.487|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:18:08.488|M|CLOUD: CURL formfree completed
+2021/02/02 04:18:08.488|M|CLOUD: Server Response is GOOD
+2021/02/02 04:18:08.493|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_041802.zip'
+2021/02/02 04:18:08.495|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:18:08.497|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:18:08.498|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 112
+2021/02/02 04:18:08.498|M|====================== Cloud Server Complete ===============
+2021/02/02 04:18:08.499|M|Remove RAW DATA File
+2021/02/02 04:18:08.501|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:19:30.051|M|RLY: CG Device type: 2
+2021/02/02 04:19:30.052|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:20:00.070|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:20:00.071|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:20:00.079|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:20:00.079|M|Waiting till interface is up and connected ...
+2021/02/02 04:20:00.115|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:20:00.115|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:20:00.117|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:20:00.194|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:20:00.195|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:20:00.196|M|ALG: Collect data from UDP ...
+2021/02/02 04:20:00.197|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:20:00.198|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:20:00.199|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:20:00.231|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:20:00.233|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:20:00.248|M|ALG: Turning laser on.
+2021/02/02 04:20:00.300|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:20:00.302|M|ALG: Set Motor Speed.
+2021/02/02 04:20:00.348|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:20:00.350|M|ALG: Get Diagnostics Info.
+2021/02/02 04:20:00.374|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:20:00.376|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2101,"pwr_1_2v":990,"lm20_temp":1250,"pwr_5v":2047,"pwr_2_5v":2044,"pwr_3_3v":2697,"pwr_v_in":878,"pwr_1_25v":0},"top":{"hv":2796,"ad_temp":645,"lm20_temp":1257,"pwr_5v":2096,"pwr_2_5v":2048,"pwr_3_3v":2711,"pwr_5v_raw":2207,"pwr_vccint":982}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.8,"stddev":0.469}],"ixe":1}
+2021/02/02 04:20:00.379|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:20:00.399|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:20:00.401|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:20:00.421|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:20:00.423|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:20:00.424|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:20:01.125|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:20:01.127|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:20:01.323|M|ALG: Total 1578 Valid of 19200 Total Pts are collected.
+2021/02/02 04:20:01.324|M|ALG: 17622 points have zero distance
+2021/02/02 04:20:01.325|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:20:01.325|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:20:01.326|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:20:01.327|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:20:01.328|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:20:01.332|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:20:01.333|M|ALG: Collect raw data was successful
+2021/02/02 04:20:01.467|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:20:01.468|M|ALG: Points : 421
+2021/02/02 04:20:01.469|M|ALG: *****************************************************
+2021/02/02 04:20:01.470|M|ALG: 
+2021/02/02 04:20:01.471|M|Scan Interval Info [1]: delayTillScan = 119, delayTillRelayOn = 89 (preheat = 30)
+2021/02/02 04:20:01.472|M|=========Scan Operation Complete ==================
+2021/02/02 04:20:01.473|M|RLY: CG Device type: 2
+2021/02/02 04:20:01.474|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:20:01.519|M|========= Building JSON ==================
+2021/02/02 04:20:01.520|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:20:01.520|M|Building JSON: report.raw_scan_output.pointsCount         = 1578
+2021/02/02 04:20:01.521|M|Building JSON: report.compressed_scan_output.pointsCount  = 421
+2021/02/02 04:20:01.522|M|Building JSON -- temp history
+2021/02/02 04:20:01.534|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:20:01.535|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:20:02.549|M|Temp Humid Sensor Values:    Humid:19.93 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:20:02.555|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:20:03.558|M|Temp Humid Sensor Values:    Humid:19.91 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:20:03.559|M|c: 23.317694, f: 73.971848, h: 19.913023
+2021/02/02 04:20:03.566|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:20:03.566|M|Building JSON -- Cell Status
+2021/02/02 04:20:03.609|M|WWAN signal strength is -113, ecio quality is -18
+2021/02/02 04:20:03.611|M|Building JSON: CloudGate supply voltage in mV: 11678
+2021/02/02 04:20:03.613|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:20:03.628|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:20:03.629|M|ALG: relative humidity value: 19.91
+2021/02/02 04:20:03.750|M|======================JSON File Prepared ============================
+2021/02/02 04:20:03.751|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:20:03.752|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:20:03.753|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:20:03.762|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:20:05.688|M|Server Response: HTTP Code = 304.
+2021/02/02 04:20:05.689|M|Server Response: Config file not modified.
+2021/02/02 04:20:05.693|M|APP: Config version not changed. result = 10212
+2021/02/02 04:20:05.694|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:20:05.695|M|ALG: Send Pending Reports ...
+2021/02/02 04:20:05.843|M|ALG:  29.3 kB file zips to   3.3 kB
+2021/02/02 04:20:05.844|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_042001.json' to '/mnt/data/lvm/json_archive/output_20210202_042001.zip'.
+2021/02/02 04:20:05.855|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:20:05.857|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:20:05.857|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:20:05.858|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:20:05.859|M|CLOUD: Perform CURL Post
+2021/02/02 04:20:07.781|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:20:07.782|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:20:07.782|M|CLOUD: CURL formfree completed
+2021/02/02 04:20:07.783|M|CLOUD: Server Response is GOOD
+2021/02/02 04:20:07.787|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_042001.zip'
+2021/02/02 04:20:07.790|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:20:07.791|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:20:07.792|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 113
+2021/02/02 04:20:07.793|M|====================== Cloud Server Complete ===============
+2021/02/02 04:20:07.794|M|Remove RAW DATA File
+2021/02/02 04:20:07.796|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:21:30.029|M|RLY: CG Device type: 2
+2021/02/02 04:21:30.030|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:22:00.084|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:22:00.085|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:22:00.092|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:22:00.093|M|Waiting till interface is up and connected ...
+2021/02/02 04:22:00.129|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:22:00.130|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:22:00.131|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:22:00.208|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:22:00.209|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:22:00.210|M|ALG: Collect data from UDP ...
+2021/02/02 04:22:00.211|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:22:00.212|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:22:00.213|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:22:00.241|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:22:00.242|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:22:00.263|M|ALG: Turning laser on.
+2021/02/02 04:22:00.317|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:22:00.319|M|ALG: Set Motor Speed.
+2021/02/02 04:22:00.362|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:22:00.364|M|ALG: Get Diagnostics Info.
+2021/02/02 04:22:00.388|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:22:00.390|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2101,"pwr_1_2v":989,"lm20_temp":1249,"pwr_5v":2051,"pwr_2_5v":2054,"pwr_3_3v":2695,"pwr_v_in":880,"pwr_1_25v":0},"top":{"hv":2794,"ad_temp":646,"lm20_temp":1256,"pwr_5v":2096,"pwr_2_5v":2048,"pwr_3_3v":2708,"pwr_5v_raw":2189,"pwr_vccint":982}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.6,"stddev":0.5}],"ixe":1}
+2021/02/02 04:22:00.393|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:22:00.413|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:22:00.415|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:22:00.434|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:22:00.437|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:22:00.438|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:22:01.118|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:22:01.119|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:22:01.315|M|ALG: Total 1575 Valid of 19200 Total Pts are collected.
+2021/02/02 04:22:01.316|M|ALG: 17625 points have zero distance
+2021/02/02 04:22:01.317|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:22:01.318|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:22:01.319|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:22:01.320|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:22:01.321|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:22:01.321|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:22:01.322|M|ALG: Collect raw data was successful
+2021/02/02 04:22:01.403|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:22:01.404|M|ALG: Points : 436
+2021/02/02 04:22:01.405|M|ALG: *****************************************************
+2021/02/02 04:22:01.406|M|ALG: 
+2021/02/02 04:22:01.407|M|Scan Interval Info [1]: delayTillScan = 119, delayTillRelayOn = 89 (preheat = 30)
+2021/02/02 04:22:01.413|M|=========Scan Operation Complete ==================
+2021/02/02 04:22:01.414|M|RLY: CG Device type: 2
+2021/02/02 04:22:01.415|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:22:01.442|M|========= Building JSON ==================
+2021/02/02 04:22:01.443|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:22:01.444|M|Building JSON: report.raw_scan_output.pointsCount         = 1575
+2021/02/02 04:22:01.444|M|Building JSON: report.compressed_scan_output.pointsCount  = 436
+2021/02/02 04:22:01.445|M|Building JSON -- temp history
+2021/02/02 04:22:01.452|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:22:01.453|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:22:02.457|M|Temp Humid Sensor Values:    Humid:19.86 RH, C:23.30 C, F:73.95 F
+2021/02/02 04:22:02.463|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:22:03.465|M|Temp Humid Sensor Values:    Humid:19.86 RH, C:23.33 C, F:74.00 F
+2021/02/02 04:22:03.466|M|c: 23.331045, f: 73.995880, h: 19.864195
+2021/02/02 04:22:03.472|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:22:03.473|M|Building JSON -- Cell Status
+2021/02/02 04:22:03.516|M|WWAN signal strength is -112, ecio quality is -16
+2021/02/02 04:22:03.518|M|Building JSON: CloudGate supply voltage in mV: 11687
+2021/02/02 04:22:03.520|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:22:03.534|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:22:03.535|M|ALG: relative humidity value: 19.86
+2021/02/02 04:22:03.667|M|======================JSON File Prepared ============================
+2021/02/02 04:22:03.668|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:22:03.669|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:22:03.670|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:22:03.678|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:22:05.335|M|Server Response: HTTP Code = 304.
+2021/02/02 04:22:05.336|M|Server Response: Config file not modified.
+2021/02/02 04:22:05.340|M|APP: Config version not changed. result = 10212
+2021/02/02 04:22:05.341|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:22:05.342|M|ALG: Send Pending Reports ...
+2021/02/02 04:22:05.487|M|ALG:  30.4 kB file zips to   3.4 kB
+2021/02/02 04:22:05.488|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_042201.json' to '/mnt/data/lvm/json_archive/output_20210202_042201.zip'.
+2021/02/02 04:22:05.498|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:22:05.499|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:22:05.499|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:22:05.500|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:22:05.501|M|CLOUD: Perform CURL Post
+2021/02/02 04:22:07.577|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:22:07.578|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:22:07.578|M|CLOUD: CURL formfree completed
+2021/02/02 04:22:07.579|M|CLOUD: Server Response is GOOD
+2021/02/02 04:22:07.583|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_042201.zip'
+2021/02/02 04:22:07.586|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:22:07.587|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:22:07.588|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 113
+2021/02/02 04:22:07.589|M|====================== Cloud Server Complete ===============
+2021/02/02 04:22:07.590|M|Remove RAW DATA File
+2021/02/02 04:22:07.592|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:23:30.021|M|RLY: CG Device type: 2
+2021/02/02 04:23:30.022|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:24:00.067|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:24:00.068|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:24:00.075|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:24:00.076|M|Waiting till interface is up and connected ...
+2021/02/02 04:24:00.112|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:24:00.113|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:24:00.114|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:24:00.191|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:24:00.192|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:24:00.193|M|ALG: Collect data from UDP ...
+2021/02/02 04:24:00.193|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:24:00.194|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:24:00.195|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:24:00.229|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:24:00.231|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:24:00.252|M|ALG: Turning laser on.
+2021/02/02 04:24:00.305|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:24:00.316|M|ALG: Set Motor Speed.
+2021/02/02 04:24:00.351|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:24:00.353|M|ALG: Get Diagnostics Info.
+2021/02/02 04:24:00.377|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:24:00.378|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2113,"pwr_1_2v":988,"lm20_temp":1250,"pwr_5v":2056,"pwr_2_5v":2048,"pwr_3_3v":2697,"pwr_v_in":881,"pwr_1_25v":0},"top":{"hv":2796,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2097,"pwr_2_5v":2047,"pwr_3_3v":2713,"pwr_5v_raw":2213,"pwr_vccint":982}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.7,"stddev":0.469}],"ixe":1}
+2021/02/02 04:24:00.381|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:24:00.402|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:24:00.403|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:24:00.424|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:24:00.427|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:24:00.428|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:24:01.033|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:24:01.035|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:24:01.228|M|ALG: Total 1606 Valid of 19200 Total Pts are collected.
+2021/02/02 04:24:01.229|M|ALG: 17594 points have zero distance
+2021/02/02 04:24:01.230|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:24:01.231|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:24:01.232|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:24:01.232|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:24:01.233|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:24:01.234|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:24:01.235|M|ALG: Collect raw data was successful
+2021/02/02 04:24:01.327|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:24:01.328|M|ALG: Points : 442
+2021/02/02 04:24:01.328|M|ALG: *****************************************************
+2021/02/02 04:24:01.329|M|ALG: 
+2021/02/02 04:24:01.331|M|Scan Interval Info [1]: delayTillScan = 119, delayTillRelayOn = 89 (preheat = 30)
+2021/02/02 04:24:01.332|M|=========Scan Operation Complete ==================
+2021/02/02 04:24:01.333|M|RLY: CG Device type: 2
+2021/02/02 04:24:01.334|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:24:01.359|M|========= Building JSON ==================
+2021/02/02 04:24:01.360|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:24:01.361|M|Building JSON: report.raw_scan_output.pointsCount         = 1606
+2021/02/02 04:24:01.362|M|Building JSON: report.compressed_scan_output.pointsCount  = 442
+2021/02/02 04:24:01.363|M|Building JSON -- temp history
+2021/02/02 04:24:01.370|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:24:01.371|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:24:02.374|M|Temp Humid Sensor Values:    Humid:19.89 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:24:02.396|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:24:03.398|M|Temp Humid Sensor Values:    Humid:19.88 RH, C:23.32 C, F:73.97 F
+2021/02/02 04:24:03.399|M|c: 23.317694, f: 73.971848, h: 19.880980
+2021/02/02 04:24:03.407|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:24:03.408|M|Building JSON -- Cell Status
+2021/02/02 04:24:03.450|M|WWAN signal strength is -112, ecio quality is -16
+2021/02/02 04:24:03.453|M|Building JSON: CloudGate supply voltage in mV: 11687
+2021/02/02 04:24:03.454|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:24:03.469|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:24:03.470|M|ALG: relative humidity value: 19.88
+2021/02/02 04:24:03.639|M|======================JSON File Prepared ============================
+2021/02/02 04:24:03.639|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:24:03.640|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:24:03.641|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:24:03.660|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:24:05.246|M|Server Response: HTTP Code = 304.
+2021/02/02 04:24:05.247|M|Server Response: Config file not modified.
+2021/02/02 04:24:05.251|M|APP: Config version not changed. result = 10212
+2021/02/02 04:24:05.253|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:24:05.253|M|ALG: Send Pending Reports ...
+2021/02/02 04:24:05.411|M|ALG:  30.8 kB file zips to   3.4 kB
+2021/02/02 04:24:05.412|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_042401.json' to '/mnt/data/lvm/json_archive/output_20210202_042401.zip'.
+2021/02/02 04:24:05.421|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:24:05.422|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:24:05.423|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:24:05.424|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:24:05.425|M|CLOUD: Perform CURL Post
+2021/02/02 04:24:07.553|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:24:07.554|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:24:07.555|M|CLOUD: CURL formfree completed
+2021/02/02 04:24:07.556|M|CLOUD: Server Response is GOOD
+2021/02/02 04:24:07.576|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_042401.zip'
+2021/02/02 04:24:07.587|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:24:07.588|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:24:07.589|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 113
+2021/02/02 04:24:07.590|M|====================== Cloud Server Complete ===============
+2021/02/02 04:24:07.591|M|Remove RAW DATA File
+2021/02/02 04:24:07.608|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:25:30.077|M|RLY: CG Device type: 2
+2021/02/02 04:25:30.078|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:26:00.008|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:26:00.009|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:26:00.016|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:26:00.017|M|Waiting till interface is up and connected ...
+2021/02/02 04:26:00.054|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:26:00.055|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:26:00.055|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:26:00.134|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:26:00.135|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:26:00.136|M|ALG: Collect data from UDP ...
+2021/02/02 04:26:00.137|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:26:00.138|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:26:00.138|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:26:00.170|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:26:00.172|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:26:00.189|M|ALG: Turning laser on.
+2021/02/02 04:26:00.248|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:26:00.250|M|ALG: Set Motor Speed.
+2021/02/02 04:26:00.293|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:26:00.295|M|ALG: Get Diagnostics Info.
+2021/02/02 04:26:00.319|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:26:00.321|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2122,"pwr_1_2v":983,"lm20_temp":1253,"pwr_5v":2050,"pwr_2_5v":2050,"pwr_3_3v":2705,"pwr_v_in":882,"pwr_1_25v":0},"top":{"hv":2795,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2095,"pwr_2_5v":2047,"pwr_3_3v":2712,"pwr_5v_raw":2202,"pwr_vccint":982}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.8,"stddev":0.453}],"ixe":1}
+2021/02/02 04:26:00.323|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:26:00.345|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:26:00.346|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:26:00.367|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:26:00.370|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:26:00.371|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:26:02.020|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:26:02.021|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:26:02.217|M|ALG: Total 1614 Valid of 19200 Total Pts are collected.
+2021/02/02 04:26:02.218|M|ALG: 17586 points have zero distance
+2021/02/02 04:26:02.218|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:26:02.219|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:26:02.220|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:26:02.221|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:26:02.222|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:26:02.223|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:26:02.223|M|ALG: Collect raw data was successful
+2021/02/02 04:26:02.316|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:26:02.317|M|ALG: Points : 426
+2021/02/02 04:26:02.318|M|ALG: *****************************************************
+2021/02/02 04:26:02.319|M|ALG: 
+2021/02/02 04:26:02.320|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
+2021/02/02 04:26:02.321|M|=========Scan Operation Complete ==================
+2021/02/02 04:26:02.322|M|RLY: CG Device type: 2
+2021/02/02 04:26:02.323|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/02 04:26:02.347|M|========= Building JSON ==================
+2021/02/02 04:26:02.349|M|Building JSON: Dump report(s) to file...
+2021/02/02 04:26:02.350|M|Building JSON: report.raw_scan_output.pointsCount         = 1614
+2021/02/02 04:26:02.350|M|Building JSON: report.compressed_scan_output.pointsCount  = 426
+2021/02/02 04:26:02.351|M|Building JSON -- temp history
+2021/02/02 04:26:02.358|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/02 04:26:02.359|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:26:03.361|M|Temp Humid Sensor Values:    Humid:19.89 RH, C:23.29 C, F:73.92 F
+2021/02/02 04:26:03.368|M|I2C open device, attempting to connect to device at address 44
+2021/02/02 04:26:04.370|M|Temp Humid Sensor Values:    Humid:19.88 RH, C:23.30 C, F:73.95 F
+2021/02/02 04:26:04.371|M|c: 23.304340, f: 73.947815, h: 19.880980
+2021/02/02 04:26:04.378|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/02 04:26:04.379|M|Building JSON -- Cell Status
+2021/02/02 04:26:04.421|M|WWAN signal strength is -122, ecio quality is -10
+2021/02/02 04:26:04.424|M|Building JSON: CloudGate supply voltage in mV: 11687
+2021/02/02 04:26:04.425|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/02 04:26:04.437|M|ALG: is relativeHumidity valid?: 0
+2021/02/02 04:26:04.437|M|ALG: relative humidity value: 19.88
+2021/02/02 04:26:04.584|M|======================JSON File Prepared ============================
+2021/02/02 04:26:04.585|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/02 04:26:04.585|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/02 04:26:04.596|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/02 04:26:04.605|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK5V311/4
+2021/02/02 04:26:06.434|M|Server Response: HTTP Code = 304.
+2021/02/02 04:26:06.435|M|Server Response: Config file not modified.
+2021/02/02 04:26:06.440|M|APP: Config version not changed. result = 10212
+2021/02/02 04:26:06.442|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/02 04:26:06.442|M|ALG: Send Pending Reports ...
+2021/02/02 04:26:06.604|M|ALG:  29.7 kB file zips to   3.2 kB
+2021/02/02 04:26:06.605|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210202_042602.json' to '/mnt/data/lvm/json_archive/output_20210202_042602.zip'.
+2021/02/02 04:26:06.632|M|CLOUD: Use ZIP Format : YES
+2021/02/02 04:26:06.633|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/02 04:26:06.633|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/02 04:26:06.634|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/02 04:26:06.635|M|CLOUD: Perform CURL Post
+2021/02/02 04:26:08.616|M|CLOUD: CURL post completed, response = 0
+2021/02/02 04:26:08.617|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/02 04:26:08.618|M|CLOUD: CURL formfree completed
+2021/02/02 04:26:08.619|M|CLOUD: Server Response is GOOD
+2021/02/02 04:26:08.623|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210202_042602.zip'
+2021/02/02 04:26:08.626|M|ALG: 1 reports was sent successfully.
+2021/02/02 04:26:08.627|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/02 04:26:08.628|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 112
+2021/02/02 04:26:08.629|M|====================== Cloud Server Complete ===============
+2021/02/02 04:26:08.630|M|Remove RAW DATA File
+2021/02/02 04:26:08.632|M|==================== Sleep inhibited due to config file ===============
+2021/02/02 04:27:30.069|M|RLY: CG Device type: 2
+2021/02/02 04:27:30.070|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/02 04:28:00.085|M|==========================Scan #1 triggered.==============================
+2021/02/02 04:28:00.087|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/02 04:28:00.094|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/02 04:28:00.095|M|Waiting till interface is up and connected ...
+2021/02/02 04:28:00.130|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
+2021/02/02 04:28:00.131|M|Interface 'eth0' is ready after 0.00 seconds.
+2021/02/02 04:28:00.132|M|APP_LASERSCAN: WaitOnInterface returns 0
+2021/02/02 04:28:00.210|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/02 04:28:00.211|M|ALG: Process COMPRESSED Scan
+2021/02/02 04:28:00.212|M|ALG: Collect data from UDP ...
+2021/02/02 04:28:00.212|M|ALG: Collect raw data with 3 attempts ...
+2021/02/02 04:28:00.213|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/02 04:28:00.214|M|ALG: GET VLP settings via HTTP first time
+2021/02/02 04:28:00.240|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
+2021/02/02 04:28:00.242|M|VLP16: settings.json:
+{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-44-67"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
+2021/02/02 04:28:00.257|M|ALG: Turning laser on.
+2021/02/02 04:28:00.319|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
+2021/02/02 04:28:00.321|M|ALG: Set Motor Speed.
+2021/02/02 04:28:00.366|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
+2021/02/02 04:28:00.369|M|ALG: Get Diagnostics Info.
+2021/02/02 04:28:00.392|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
+2021/02/02 04:28:00.394|M|VLP16: diag.json:
+{"volt_temp":{"bot":{"i_out":2113,"pwr_1_2v":988,"lm20_temp":1251,"pwr_5v":2047,"pwr_2_5v":2049,"pwr_3_3v":2698,"pwr_v_in":880,"pwr_1_25v":0},"top":{"hv":2795,"ad_temp":646,"lm20_temp":1257,"pwr_5v":2096,"pwr_2_5v":2047,"pwr_3_3v":2709,"pwr_5v_raw":2209,"pwr_vccint":981}},"vhv":237,"adc_nf":[14],"adc_stats":[{"mean":14.5,"stddev":0.531}],"ixe":1}
+2021/02/02 04:28:00.397|M|VLP16: Set Laser Start Angle to 315
+2021/02/02 04:28:00.418|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
+2021/02/02 04:28:00.419|M|VLP16: Set Laser End Angle to 45
+2021/02/02 04:28:00.440|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
+2021/02/02 04:28:00.443|M|VLP16: Attempt #1 to read UDP data (50 packets).
+2021/02/02 04:28:00.444|M|The socket is now open to the LIDAR, preparing to read packets.
+2021/02/02 04:28:01.935|M|VLP16: Got a total of 50 packets from VLP16
+2021/02/02 04:28:01.936|M|VLP16: Cumulative 50 data packets received. ec = 0
+2021/02/02 04:28:02.153|M|ALG: Total 1724 Valid of 19200 Total Pts are collected.
+2021/02/02 04:28:02.154|M|ALG: 17476 points have zero distance
+2021/02/02 04:28:02.155|M|ALG: 0 points rejected by azimuth filter
+2021/02/02 04:28:02.156|M|ALG: 0 points rejected by elevation filter
+2021/02/02 04:28:02.157|M|ALG: 0 points rejected by radius filter
+2021/02/02 04:28:02.158|M|ALG: 0 points rejected by x-range filter
+2021/02/02 04:28:02.159|M|ALG: 0 points rejected by y-range filter
+2021/02/02 04:28:02.160|M|ALG: 0 points rejected by z-range filter
+2021/02/02 04:28:02.161|M|ALG: Collect raw data was successful
+2021/02/02 04:28:02.251|M|ALG: COMPRESSED Scan Completed
+2021/02/02 04:28:02.252|M|ALG: Points : 422
+2021/02/02 04:28:02.253|M|ALG: *****************************************************
+2021/02/02 04:28:02.253|M|ALG: 
+2021/02/02 04:28:02.254|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
+2021/02/02 04:28:02.256|M|=========Scan Operation Complete ==================
+2021/02/02 04:28:02.257|M|RLY: CG Device type: 2
+2021/02/02 04:28:02.257|M|RLY: CG_MINI Relay: turn off via GPIO203
