@@ -1,395 +1,983 @@
-2021/02/06 21:58:08.581|M|====================== Cloud Server Complete ===============
-2021/02/06 21:58:08.583|M|Remove RAW DATA File
-2021/02/06 21:58:08.586|M|==================== Sleep inhibited due to config file ===============
-2021/02/06 21:59:30.035|M|RLY: CG Device type: 2
-2021/02/06 21:59:30.036|M|RLY: CG_MINI Relay: turn on via GPIO203
-2021/02/06 22:00:00.030|M|==========================Scan #1 triggered.==============================
-2021/02/06 22:00:00.031|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
-2021/02/06 22:00:00.048|M|APP_LASERSCAN: Set eth0 operation error code: 0
-2021/02/06 22:00:00.049|M|Waiting till interface is up and connected ...
-2021/02/06 22:00:00.098|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
-2021/02/06 22:00:00.099|M|Interface 'eth0' is ready after 0.00 seconds.
-2021/02/06 22:00:00.100|M|APP_LASERSCAN: WaitOnInterface returns 0
-2021/02/06 22:00:00.179|M|*** PROCESS COMPRESSED SCAN ***
-2021/02/06 22:00:00.180|M|ALG: Process COMPRESSED Scan
-2021/02/06 22:00:00.181|M|ALG: Collect data from UDP ...
-2021/02/06 22:00:00.182|M|ALG: Collect raw data with 3 attempts ...
-2021/02/06 22:00:00.183|M|ALG: Collect raw data. Attempt #1 ...
-2021/02/06 22:00:00.184|M|ALG: GET VLP settings via HTTP first time
-2021/02/06 22:00:00.217|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
-2021/02/06 22:00:00.219|M|VLP16: settings.json:
-{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
-2021/02/06 22:00:00.234|M|ALG: Turning laser on.
-2021/02/06 22:00:00.286|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
-2021/02/06 22:00:00.287|M|ALG: Set Motor Speed.
-2021/02/06 22:00:00.328|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
-2021/02/06 22:00:00.330|M|ALG: Get Diagnostics Info.
-2021/02/06 22:00:00.354|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
-2021/02/06 22:00:00.356|M|VLP16: diag.json:
-{"volt_temp":{"bot":{"i_out":2086,"pwr_1_2v":983,"lm20_temp":1245,"pwr_5v":2030,"pwr_2_5v":2050,"pwr_3_3v":2697,"pwr_v_in":875,"pwr_1_25v":0},"top":{"hv":2810,"ad_temp":631,"lm20_temp":1231,"pwr_5v":2060,"pwr_2_5v":2046,"pwr_3_3v":2646,"pwr_5v_raw":2217,"pwr_vccint":969}},"vhv":257,"adc_nf":[14],"adc_stats":[{"mean":14.6,"stddev":0.531}],"ixe":1}
-2021/02/06 22:00:00.359|M|VLP16: Set Laser Start Angle to 315
-2021/02/06 22:00:00.380|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
-2021/02/06 22:00:00.381|M|VLP16: Set Laser End Angle to 45
-2021/02/06 22:00:00.402|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
-2021/02/06 22:00:00.405|M|VLP16: Attempt #1 to read UDP data (50 packets).
-2021/02/06 22:00:00.406|M|The socket is now open to the LIDAR, preparing to read packets.
-2021/02/06 22:00:01.617|M|VLP16: Got a total of 50 packets from VLP16
-2021/02/06 22:00:01.619|M|VLP16: Cumulative 50 data packets received. ec = 0
-2021/02/06 22:00:02.210|M|ALG: 8291 collected points exceed 2500 pointCountMax
-2021/02/06 22:00:02.211|M|ALG: Total 8291 Valid of 19200 Total Pts are collected.
-2021/02/06 22:00:02.212|M|ALG: 10909 points have zero distance
-2021/02/06 22:00:02.215|M|ALG: 0 points rejected by azimuth filter
-2021/02/06 22:00:02.216|M|ALG: 0 points rejected by elevation filter
-2021/02/06 22:00:02.217|M|ALG: 0 points rejected by radius filter
-2021/02/06 22:00:02.217|M|ALG: 0 points rejected by x-range filter
-2021/02/06 22:00:02.218|M|ALG: 0 points rejected by y-range filter
-2021/02/06 22:00:02.219|M|ALG: 0 points rejected by z-range filter
-2021/02/06 22:00:02.220|M|ALG: Collect raw data was successful
-2021/02/06 22:00:02.397|M|ALG: COMPRESSED Scan Completed
-2021/02/06 22:00:02.398|M|ALG: Points : 130
-2021/02/06 22:00:02.399|M|ALG: *****************************************************
-2021/02/06 22:00:02.400|M|ALG: 
-2021/02/06 22:00:02.400|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
-2021/02/06 22:00:02.402|M|=========Scan Operation Complete ==================
-2021/02/06 22:00:02.403|M|RLY: CG Device type: 2
-2021/02/06 22:00:02.404|M|RLY: CG_MINI Relay: turn off via GPIO203
-2021/02/06 22:00:02.431|M|========= Building JSON ==================
-2021/02/06 22:00:02.432|M|Building JSON: Dump report(s) to file...
-2021/02/06 22:00:02.433|M|Building JSON: report.raw_scan_output.pointsCount         = 8291
-2021/02/06 22:00:02.434|M|Building JSON: report.compressed_scan_output.pointsCount  = 130
-2021/02/06 22:00:02.435|M|Building JSON -- temp history
-2021/02/06 22:00:02.443|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-2021/02/06 22:00:02.444|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:00:03.447|M|Temp Humid Sensor Values:    Humid:19.71 RH, C:23.91 C, F:75.04 F
-2021/02/06 22:00:03.454|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:00:04.457|M|Temp Humid Sensor Values:    Humid:19.76 RH, C:23.90 C, F:75.01 F
-2021/02/06 22:00:04.458|M|c: 23.897154, f: 75.014877, h: 19.758907
-2021/02/06 22:00:04.465|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
-2021/02/06 22:00:04.466|M|Building JSON -- Cell Status
-2021/02/06 22:00:04.524|M|WWAN signal strength is -115, ecio quality is -15
-2021/02/06 22:00:04.526|M|Building JSON: CloudGate supply voltage in mV: 11655
-2021/02/06 22:00:04.534|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
-2021/02/06 22:00:04.535|M|ALG: is relativeHumidity valid?: 0
-2021/02/06 22:00:04.536|M|ALG: relative humidity value: 19.76
-2021/02/06 22:00:04.582|M|======================JSON File Prepared ============================
-2021/02/06 22:00:04.582|M|====================== Cloud Server Contact Interval Triggered.===============
-2021/02/06 22:00:04.584|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
-2021/02/06 22:00:04.585|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
-2021/02/06 22:00:04.594|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75143/5
-2021/02/06 22:00:06.438|M|Server Response: HTTP Code = 304.
-2021/02/06 22:00:06.438|M|Server Response: Config file not modified.
-2021/02/06 22:00:06.442|M|APP: Config version not changed. result = 10212
-2021/02/06 22:00:06.444|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
-2021/02/06 22:00:06.445|M|ALG: Send Pending Reports ...
-2021/02/06 22:00:06.493|M|ALG:   9.2 kB file zips to   1.4 kB
-2021/02/06 22:00:06.494|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210206_220002.json' to '/mnt/data/lvm/json_archive/output_20210206_220002.zip'.
-2021/02/06 22:00:06.504|M|CLOUD: Use ZIP Format : YES
-2021/02/06 22:00:06.505|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
-2021/02/06 22:00:06.505|M|CLOUD: POST Request Content Type: multipart/form-data
-2021/02/06 22:00:06.506|M|CLOUD: set CURL timeout to 10 seconds
-2021/02/06 22:00:06.507|M|CLOUD: Perform CURL Post
-2021/02/06 22:00:08.670|M|CLOUD: CURL post completed, response = 0
-2021/02/06 22:00:08.671|M|CLOUD: Perform CURL formfree (clear form data)
-2021/02/06 22:00:08.672|M|CLOUD: CURL formfree completed
-2021/02/06 22:00:08.673|M|CLOUD: Server Response is GOOD
-2021/02/06 22:00:08.677|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210206_220002.zip'
-2021/02/06 22:00:08.680|M|ALG: 1 reports was sent successfully.
-2021/02/06 22:00:08.681|M|Server contact function complete: Low Power mode shutdown is eligible now
-2021/02/06 22:00:08.682|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 112
-2021/02/06 22:00:08.683|M|====================== Cloud Server Complete ===============
-2021/02/06 22:00:08.684|M|Remove RAW DATA File
-2021/02/06 22:00:08.686|M|==================== Sleep inhibited due to config file ===============
-2021/02/06 22:01:30.023|M|RLY: CG Device type: 2
-2021/02/06 22:01:30.024|M|RLY: CG_MINI Relay: turn on via GPIO203
-2021/02/06 22:02:00.078|M|==========================Scan #1 triggered.==============================
-2021/02/06 22:02:00.079|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
-2021/02/06 22:02:00.094|M|APP_LASERSCAN: Set eth0 operation error code: 0
-2021/02/06 22:02:00.095|M|Waiting till interface is up and connected ...
-2021/02/06 22:02:00.144|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
-2021/02/06 22:02:00.145|M|Interface 'eth0' is ready after 0.00 seconds.
-2021/02/06 22:02:00.146|M|APP_LASERSCAN: WaitOnInterface returns 0
-2021/02/06 22:02:00.222|M|*** PROCESS COMPRESSED SCAN ***
-2021/02/06 22:02:00.224|M|ALG: Process COMPRESSED Scan
-2021/02/06 22:02:00.225|M|ALG: Collect data from UDP ...
-2021/02/06 22:02:00.226|M|ALG: Collect raw data with 3 attempts ...
-2021/02/06 22:02:00.226|M|ALG: Collect raw data. Attempt #1 ...
-2021/02/06 22:02:00.227|M|ALG: GET VLP settings via HTTP first time
-2021/02/06 22:02:00.259|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
-2021/02/06 22:02:00.261|M|VLP16: settings.json:
-{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
-2021/02/06 22:02:00.275|M|ALG: Turning laser on.
-2021/02/06 22:02:00.334|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
-2021/02/06 22:02:00.336|M|ALG: Set Motor Speed.
-2021/02/06 22:02:00.382|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
-2021/02/06 22:02:00.385|M|ALG: Get Diagnostics Info.
-2021/02/06 22:02:00.409|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
-2021/02/06 22:02:00.411|M|VLP16: diag.json:
-{"volt_temp":{"bot":{"i_out":2077,"pwr_1_2v":984,"lm20_temp":1243,"pwr_5v":2033,"pwr_2_5v":2047,"pwr_3_3v":2699,"pwr_v_in":874,"pwr_1_25v":0},"top":{"hv":2811,"ad_temp":631,"lm20_temp":1231,"pwr_5v":2058,"pwr_2_5v":2046,"pwr_3_3v":2647,"pwr_5v_raw":2208,"pwr_vccint":969}},"vhv":256,"adc_nf":[14],"adc_stats":[{"mean":14.6,"stddev":0.531}],"ixe":1}
-2021/02/06 22:02:00.414|M|VLP16: Set Laser Start Angle to 315
-2021/02/06 22:02:00.435|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
-2021/02/06 22:02:00.437|M|VLP16: Set Laser End Angle to 45
-2021/02/06 22:02:00.459|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
-2021/02/06 22:02:00.461|M|VLP16: Attempt #1 to read UDP data (50 packets).
-2021/02/06 22:02:00.462|M|The socket is now open to the LIDAR, preparing to read packets.
-2021/02/06 22:02:03.032|M|VLP16: Got a total of 50 packets from VLP16
-2021/02/06 22:02:03.033|M|VLP16: Cumulative 50 data packets received. ec = 0
-2021/02/06 22:02:03.557|M|ALG: 7535 collected points exceed 2500 pointCountMax
-2021/02/06 22:02:03.558|M|ALG: Total 7535 Valid of 19200 Total Pts are collected.
-2021/02/06 22:02:03.559|M|ALG: 11665 points have zero distance
-2021/02/06 22:02:03.560|M|ALG: 0 points rejected by azimuth filter
-2021/02/06 22:02:03.560|M|ALG: 0 points rejected by elevation filter
-2021/02/06 22:02:03.561|M|ALG: 0 points rejected by radius filter
-2021/02/06 22:02:03.562|M|ALG: 0 points rejected by x-range filter
-2021/02/06 22:02:03.564|M|ALG: 0 points rejected by y-range filter
-2021/02/06 22:02:03.564|M|ALG: 0 points rejected by z-range filter
-2021/02/06 22:02:03.565|M|ALG: Collect raw data was successful
-2021/02/06 22:02:03.709|M|ALG: COMPRESSED Scan Completed
-2021/02/06 22:02:03.710|M|ALG: Points : 132
-2021/02/06 22:02:03.711|M|ALG: *****************************************************
-2021/02/06 22:02:03.712|M|ALG: 
-2021/02/06 22:02:03.712|M|Scan Interval Info [1]: delayTillScan = 117, delayTillRelayOn = 87 (preheat = 30)
-2021/02/06 22:02:03.714|M|=========Scan Operation Complete ==================
-2021/02/06 22:02:03.715|M|RLY: CG Device type: 2
-2021/02/06 22:02:03.716|M|RLY: CG_MINI Relay: turn off via GPIO203
-2021/02/06 22:02:03.741|M|========= Building JSON ==================
-2021/02/06 22:02:03.742|M|Building JSON: Dump report(s) to file...
-2021/02/06 22:02:03.743|M|Building JSON: report.raw_scan_output.pointsCount         = 7535
-2021/02/06 22:02:03.745|M|Building JSON: report.compressed_scan_output.pointsCount  = 132
-2021/02/06 22:02:03.746|M|Building JSON -- temp history
-2021/02/06 22:02:03.754|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-2021/02/06 22:02:03.755|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:02:04.757|M|Temp Humid Sensor Values:    Humid:19.71 RH, C:23.88 C, F:74.99 F
-2021/02/06 22:02:04.765|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:02:05.768|M|Temp Humid Sensor Values:    Humid:19.71 RH, C:23.91 C, F:75.04 F
-2021/02/06 22:02:05.769|M|c: 23.910505, f: 75.038910, h: 19.708553
-2021/02/06 22:02:05.776|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
-2021/02/06 22:02:05.777|M|Building JSON -- Cell Status
-2021/02/06 22:02:05.833|M|WWAN signal strength is -115, ecio quality is -16
-2021/02/06 22:02:05.835|M|Building JSON: CloudGate supply voltage in mV: 11672
-2021/02/06 22:02:05.849|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
-2021/02/06 22:02:05.849|M|ALG: is relativeHumidity valid?: 0
-2021/02/06 22:02:05.850|M|ALG: relative humidity value: 19.71
-2021/02/06 22:02:05.907|M|======================JSON File Prepared ============================
-2021/02/06 22:02:05.908|M|====================== Cloud Server Contact Interval Triggered.===============
-2021/02/06 22:02:05.909|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
-2021/02/06 22:02:05.910|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
-2021/02/06 22:02:05.950|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75143/5
-2021/02/06 22:02:07.799|M|Server Response: HTTP Code = 304.
-2021/02/06 22:02:07.800|M|Server Response: Config file not modified.
-2021/02/06 22:02:07.805|M|APP: Config version not changed. result = 10212
-2021/02/06 22:02:07.806|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
-2021/02/06 22:02:07.807|M|ALG: Send Pending Reports ...
-2021/02/06 22:02:07.862|M|ALG:   9.3 kB file zips to   1.4 kB
-2021/02/06 22:02:07.863|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210206_220203.json' to '/mnt/data/lvm/json_archive/output_20210206_220203.zip'.
-2021/02/06 22:02:07.872|M|CLOUD: Use ZIP Format : YES
-2021/02/06 22:02:07.873|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
-2021/02/06 22:02:07.874|M|CLOUD: POST Request Content Type: multipart/form-data
-2021/02/06 22:02:07.875|M|CLOUD: set CURL timeout to 10 seconds
-2021/02/06 22:02:07.876|M|CLOUD: Perform CURL Post
-2021/02/06 22:02:09.701|M|CLOUD: CURL post completed, response = 0
-2021/02/06 22:02:09.702|M|CLOUD: Perform CURL formfree (clear form data)
-2021/02/06 22:02:09.703|M|CLOUD: CURL formfree completed
-2021/02/06 22:02:09.704|M|CLOUD: Server Response is GOOD
-2021/02/06 22:02:09.708|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210206_220203.zip'
-2021/02/06 22:02:09.710|M|ALG: 1 reports was sent successfully.
-2021/02/06 22:02:09.711|M|Server contact function complete: Low Power mode shutdown is eligible now
-2021/02/06 22:02:09.712|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 111
-2021/02/06 22:02:09.713|M|====================== Cloud Server Complete ===============
-2021/02/06 22:02:09.714|M|Remove RAW DATA File
-2021/02/06 22:02:09.717|M|==================== Sleep inhibited due to config file ===============
-2021/02/06 22:03:30.095|M|RLY: CG Device type: 2
-2021/02/06 22:03:30.097|M|RLY: CG_MINI Relay: turn on via GPIO203
-2021/02/06 22:04:00.040|M|==========================Scan #1 triggered.==============================
-2021/02/06 22:04:00.041|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
-2021/02/06 22:04:00.052|M|APP_LASERSCAN: Set eth0 operation error code: 0
-2021/02/06 22:04:00.053|M|Waiting till interface is up and connected ...
-2021/02/06 22:04:00.120|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
-2021/02/06 22:04:00.121|M|Interface 'eth0' is ready after 0.00 seconds.
-2021/02/06 22:04:00.122|M|APP_LASERSCAN: WaitOnInterface returns 0
-2021/02/06 22:04:00.201|M|*** PROCESS COMPRESSED SCAN ***
-2021/02/06 22:04:00.202|M|ALG: Process COMPRESSED Scan
-2021/02/06 22:04:00.202|M|ALG: Collect data from UDP ...
-2021/02/06 22:04:00.203|M|ALG: Collect raw data with 3 attempts ...
-2021/02/06 22:04:00.204|M|ALG: Collect raw data. Attempt #1 ...
-2021/02/06 22:04:00.205|M|ALG: GET VLP settings via HTTP first time
-2021/02/06 22:04:00.238|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
-2021/02/06 22:04:00.239|M|VLP16: settings.json:
-{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
-2021/02/06 22:04:00.257|M|ALG: Turning laser on.
-2021/02/06 22:04:00.312|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
-2021/02/06 22:04:00.314|M|ALG: Set Motor Speed.
-2021/02/06 22:04:00.365|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
-2021/02/06 22:04:00.367|M|ALG: Get Diagnostics Info.
-2021/02/06 22:04:00.392|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
-2021/02/06 22:04:00.395|M|VLP16: diag.json:
-{"volt_temp":{"bot":{"i_out":2076,"pwr_1_2v":981,"lm20_temp":1245,"pwr_5v":2027,"pwr_2_5v":2046,"pwr_3_3v":2695,"pwr_v_in":875,"pwr_1_25v":0},"top":{"hv":2810,"ad_temp":631,"lm20_temp":1231,"pwr_5v":2057,"pwr_2_5v":2046,"pwr_3_3v":2647,"pwr_5v_raw":2198,"pwr_vccint":969}},"vhv":257,"adc_nf":[14],"adc_stats":[{"mean":14.8,"stddev":0.484}],"ixe":1}
-2021/02/06 22:04:00.397|M|VLP16: Set Laser Start Angle to 315
-2021/02/06 22:04:00.418|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
-2021/02/06 22:04:00.420|M|VLP16: Set Laser End Angle to 45
-2021/02/06 22:04:00.440|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
-2021/02/06 22:04:00.443|M|VLP16: Attempt #1 to read UDP data (50 packets).
-2021/02/06 22:04:00.444|M|The socket is now open to the LIDAR, preparing to read packets.
-2021/02/06 22:04:02.610|M|VLP16: Got a total of 50 packets from VLP16
-2021/02/06 22:04:02.611|M|VLP16: Cumulative 50 data packets received. ec = 0
-2021/02/06 22:04:03.153|M|ALG: 7842 collected points exceed 2500 pointCountMax
-2021/02/06 22:04:03.154|M|ALG: Total 7842 Valid of 19200 Total Pts are collected.
-2021/02/06 22:04:03.155|M|ALG: 11358 points have zero distance
-2021/02/06 22:04:03.155|M|ALG: 0 points rejected by azimuth filter
-2021/02/06 22:04:03.156|M|ALG: 0 points rejected by elevation filter
-2021/02/06 22:04:03.157|M|ALG: 0 points rejected by radius filter
-2021/02/06 22:04:03.158|M|ALG: 0 points rejected by x-range filter
-2021/02/06 22:04:03.159|M|ALG: 0 points rejected by y-range filter
-2021/02/06 22:04:03.160|M|ALG: 0 points rejected by z-range filter
-2021/02/06 22:04:03.160|M|ALG: Collect raw data was successful
-2021/02/06 22:04:03.334|M|ALG: COMPRESSED Scan Completed
-2021/02/06 22:04:03.335|M|ALG: Points : 136
-2021/02/06 22:04:03.335|M|ALG: *****************************************************
-2021/02/06 22:04:03.336|M|ALG: 
-2021/02/06 22:04:03.337|M|Scan Interval Info [1]: delayTillScan = 117, delayTillRelayOn = 87 (preheat = 30)
-2021/02/06 22:04:03.338|M|=========Scan Operation Complete ==================
-2021/02/06 22:04:03.339|M|RLY: CG Device type: 2
-2021/02/06 22:04:03.340|M|RLY: CG_MINI Relay: turn off via GPIO203
-2021/02/06 22:04:03.365|M|========= Building JSON ==================
-2021/02/06 22:04:03.366|M|Building JSON: Dump report(s) to file...
-2021/02/06 22:04:03.367|M|Building JSON: report.raw_scan_output.pointsCount         = 7842
-2021/02/06 22:04:03.368|M|Building JSON: report.compressed_scan_output.pointsCount  = 136
-2021/02/06 22:04:03.369|M|Building JSON -- temp history
-2021/02/06 22:04:03.378|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-2021/02/06 22:04:03.379|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:04:04.381|M|Temp Humid Sensor Values:    Humid:19.66 RH, C:23.92 C, F:75.06 F
-2021/02/06 22:04:04.388|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:04:05.391|M|Temp Humid Sensor Values:    Humid:19.67 RH, C:23.91 C, F:75.04 F
-2021/02/06 22:04:05.392|M|c: 23.910505, f: 75.038910, h: 19.674982
-2021/02/06 22:04:05.400|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
-2021/02/06 22:04:05.401|M|Building JSON -- Cell Status
-2021/02/06 22:04:05.471|M|WWAN signal strength is -115, ecio quality is -11
-2021/02/06 22:04:05.475|M|Building JSON: CloudGate supply voltage in mV: 11681
-2021/02/06 22:04:05.492|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
-2021/02/06 22:04:05.492|M|ALG: is relativeHumidity valid?: 0
-2021/02/06 22:04:05.494|M|ALG: relative humidity value: 19.67
-2021/02/06 22:04:05.539|M|======================JSON File Prepared ============================
-2021/02/06 22:04:05.540|M|====================== Cloud Server Contact Interval Triggered.===============
-2021/02/06 22:04:05.541|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
-2021/02/06 22:04:05.541|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
-2021/02/06 22:04:05.589|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75143/5
-2021/02/06 22:04:07.697|M|Server Response: HTTP Code = 304.
-2021/02/06 22:04:07.698|M|Server Response: Config file not modified.
-2021/02/06 22:04:07.702|M|APP: Config version not changed. result = 10212
-2021/02/06 22:04:07.703|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
-2021/02/06 22:04:07.704|M|ALG: Send Pending Reports ...
-2021/02/06 22:04:07.758|M|ALG:   9.6 kB file zips to   1.4 kB
-2021/02/06 22:04:07.759|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210206_220403.json' to '/mnt/data/lvm/json_archive/output_20210206_220403.zip'.
-2021/02/06 22:04:07.768|M|CLOUD: Use ZIP Format : YES
-2021/02/06 22:04:07.769|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
-2021/02/06 22:04:07.770|M|CLOUD: POST Request Content Type: multipart/form-data
-2021/02/06 22:04:07.771|M|CLOUD: set CURL timeout to 10 seconds
-2021/02/06 22:04:07.772|M|CLOUD: Perform CURL Post
-2021/02/06 22:04:11.536|M|CLOUD: CURL post completed, response = 0
-2021/02/06 22:04:11.538|M|CLOUD: Perform CURL formfree (clear form data)
-2021/02/06 22:04:11.539|M|CLOUD: CURL formfree completed
-2021/02/06 22:04:11.540|M|CLOUD: Server Response is GOOD
-2021/02/06 22:04:11.554|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210206_220403.zip'
-2021/02/06 22:04:11.556|M|ALG: 1 reports was sent successfully.
-2021/02/06 22:04:11.557|M|Server contact function complete: Low Power mode shutdown is eligible now
-2021/02/06 22:04:11.558|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 109
-2021/02/06 22:04:11.559|M|====================== Cloud Server Complete ===============
-2021/02/06 22:04:11.560|M|Remove RAW DATA File
-2021/02/06 22:04:11.585|M|==================== Sleep inhibited due to config file ===============
-2021/02/06 22:05:30.031|M|RLY: CG Device type: 2
-2021/02/06 22:05:30.032|M|RLY: CG_MINI Relay: turn on via GPIO203
-2021/02/06 22:06:00.043|M|==========================Scan #1 triggered.==============================
-2021/02/06 22:06:00.044|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
-2021/02/06 22:06:00.057|M|APP_LASERSCAN: Set eth0 operation error code: 0
-2021/02/06 22:06:00.057|M|Waiting till interface is up and connected ...
-2021/02/06 22:06:00.108|M|Interface : eth0. EN: YES, CFG: YES, CONN: YES 
-2021/02/06 22:06:00.109|M|Interface 'eth0' is ready after 0.00 seconds.
-2021/02/06 22:06:00.110|M|APP_LASERSCAN: WaitOnInterface returns 0
-2021/02/06 22:06:00.190|M|*** PROCESS COMPRESSED SCAN ***
-2021/02/06 22:06:00.191|M|ALG: Process COMPRESSED Scan
-2021/02/06 22:06:00.192|M|ALG: Collect data from UDP ...
-2021/02/06 22:06:00.192|M|ALG: Collect raw data with 3 attempts ...
-2021/02/06 22:06:00.194|M|ALG: Collect raw data. Attempt #1 ...
-2021/02/06 22:06:00.195|M|ALG: GET VLP settings via HTTP first time
-2021/02/06 22:06:00.228|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 0
-2021/02/06 22:06:00.230|M|VLP16: settings.json:
-{"laser":"On","returns":"Strongest","rpm":600,"fov":{"start":0,"end":359},"gpsctl":{"gpsrxv":"Off"},"ppsctl":{"delay":"5","gpsrxv":"Off","ppslck":"Off"},"phaselock":{"enabled":"Off","offset":"0"},"host":{"addr":"255.255.255.255","dport":"2368","tport":"8308","udpcs":"Off"},"net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"active_net":{"addr":"192.168.1.201","mask":"255.255.255.0","gateway":"192.168.1.1","dhcp":"Off","mac_addr":"60-76-88-38-6a-b1"},"detthr":20,"dynthrsw":20,"show_advanced":"Off","disperser":{"level":0},"laserpwr":{"extpwren":"Off"}}
-2021/02/06 22:06:00.245|M|ALG: Turning laser on.
-2021/02/06 22:06:00.302|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='laser=on' result = 0
-2021/02/06 22:06:00.312|M|ALG: Set Motor Speed.
-2021/02/06 22:06:00.347|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting', data='rpm=300' result = 0
-2021/02/06 22:06:00.348|M|ALG: Get Diagnostics Info.
-2021/02/06 22:06:00.372|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/diag.json', data='(null)' result = 0
-2021/02/06 22:06:00.374|M|VLP16: diag.json:
-{"volt_temp":{"bot":{"i_out":2075,"pwr_1_2v":984,"lm20_temp":1243,"pwr_5v":2030,"pwr_2_5v":2047,"pwr_3_3v":2696,"pwr_v_in":874,"pwr_1_25v":0},"top":{"hv":2810,"ad_temp":631,"lm20_temp":1230,"pwr_5v":2058,"pwr_2_5v":2046,"pwr_3_3v":2650,"pwr_5v_raw":2207,"pwr_vccint":969}},"vhv":257,"adc_nf":[14],"adc_stats":[{"mean":14.7,"stddev":0.469}],"ixe":1}
-2021/02/06 22:06:00.376|M|VLP16: Set Laser Start Angle to 315
-2021/02/06 22:06:00.397|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='start=315' result = 0
-2021/02/06 22:06:00.399|M|VLP16: Set Laser End Angle to 45
-2021/02/06 22:06:00.418|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/setting/fov', data='end=45' result = 0
-2021/02/06 22:06:00.421|M|VLP16: Attempt #1 to read UDP data (50 packets).
-2021/02/06 22:06:00.422|M|The socket is now open to the LIDAR, preparing to read packets.
-2021/02/06 22:06:01.624|M|VLP16: Got a total of 50 packets from VLP16
-2021/02/06 22:06:01.625|M|VLP16: Cumulative 50 data packets received. ec = 0
-2021/02/06 22:06:02.253|M|ALG: 9157 collected points exceed 2500 pointCountMax
-2021/02/06 22:06:02.254|M|ALG: Total 9157 Valid of 19200 Total Pts are collected.
-2021/02/06 22:06:02.255|M|ALG: 10043 points have zero distance
-2021/02/06 22:06:02.256|M|ALG: 0 points rejected by azimuth filter
-2021/02/06 22:06:02.257|M|ALG: 0 points rejected by elevation filter
-2021/02/06 22:06:02.257|M|ALG: 0 points rejected by radius filter
-2021/02/06 22:06:02.258|M|ALG: 0 points rejected by x-range filter
-2021/02/06 22:06:02.259|M|ALG: 0 points rejected by y-range filter
-2021/02/06 22:06:02.260|M|ALG: 0 points rejected by z-range filter
-2021/02/06 22:06:02.260|M|ALG: Collect raw data was successful
-2021/02/06 22:06:02.418|M|ALG: COMPRESSED Scan Completed
-2021/02/06 22:06:02.419|M|ALG: Points : 131
-2021/02/06 22:06:02.420|M|ALG: *****************************************************
-2021/02/06 22:06:02.421|M|ALG: 
-2021/02/06 22:06:02.422|M|Scan Interval Info [1]: delayTillScan = 118, delayTillRelayOn = 88 (preheat = 30)
-2021/02/06 22:06:02.424|M|=========Scan Operation Complete ==================
-2021/02/06 22:06:02.425|M|RLY: CG Device type: 2
-2021/02/06 22:06:02.426|M|RLY: CG_MINI Relay: turn off via GPIO203
-2021/02/06 22:06:02.456|M|========= Building JSON ==================
-2021/02/06 22:06:02.458|M|Building JSON: Dump report(s) to file...
-2021/02/06 22:06:02.458|M|Building JSON: report.raw_scan_output.pointsCount         = 9157
-2021/02/06 22:06:02.460|M|Building JSON: report.compressed_scan_output.pointsCount  = 131
-2021/02/06 22:06:02.461|M|Building JSON -- temp history
-2021/02/06 22:06:02.469|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-2021/02/06 22:06:02.470|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:06:03.472|M|Temp Humid Sensor Values:    Humid:19.67 RH, C:23.91 C, F:75.04 F
-2021/02/06 22:06:03.479|M|I2C open device, attempting to connect to device at address 44
-2021/02/06 22:06:04.481|M|Temp Humid Sensor Values:    Humid:19.69 RH, C:23.92 C, F:75.06 F
-2021/02/06 22:06:04.482|M|c: 23.923857, f: 75.062943, h: 19.693295
-2021/02/06 22:06:04.489|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
-2021/02/06 22:06:04.490|M|Building JSON -- Cell Status
-2021/02/06 22:06:04.547|M|WWAN signal strength is -115, ecio quality is -16
-2021/02/06 22:06:04.549|M|Building JSON: CloudGate supply voltage in mV: 11672
-2021/02/06 22:06:04.560|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
-2021/02/06 22:06:04.561|M|ALG: is relativeHumidity valid?: 0
-2021/02/06 22:06:04.561|M|ALG: relative humidity value: 19.69
-2021/02/06 22:06:04.629|M|======================JSON File Prepared ============================
-2021/02/06 22:06:04.629|M|====================== Cloud Server Contact Interval Triggered.===============
-2021/02/06 22:06:04.630|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
-2021/02/06 22:06:04.631|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
-2021/02/06 22:06:04.667|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75143/5
-2021/02/06 22:06:06.475|M|Server Response: HTTP Code = 304.
-2021/02/06 22:06:06.476|M|Server Response: Config file not modified.
-2021/02/06 22:06:06.480|M|APP: Config version not changed. result = 10212
-2021/02/06 22:06:06.481|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
-2021/02/06 22:06:06.482|M|ALG: Send Pending Reports ...
-2021/02/06 22:06:06.537|M|ALG:   9.3 kB file zips to   1.4 kB
-2021/02/06 22:06:06.538|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210206_220602.json' to '/mnt/data/lvm/json_archive/output_20210206_220602.zip'.
-2021/02/06 22:06:06.547|M|CLOUD: Use ZIP Format : YES
-2021/02/06 22:06:06.548|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
-2021/02/06 22:06:06.549|M|CLOUD: POST Request Content Type: multipart/form-data
-2021/02/06 22:06:06.550|M|CLOUD: set CURL timeout to 10 seconds
-2021/02/06 22:06:06.551|M|CLOUD: Perform CURL Post
-2021/02/06 22:06:10.315|M|CLOUD: CURL post completed, response = 0
-2021/02/06 22:06:10.316|M|CLOUD: Perform CURL formfree (clear form data)
-2021/02/06 22:06:10.317|M|CLOUD: CURL formfree completed
-2021/02/06 22:06:10.318|M|CLOUD: Server Response is GOOD
-2021/02/06 22:06:10.322|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210206_220602.zip'
-2021/02/06 22:06:10.325|M|ALG: 1 reports was sent successfully.
-2021/02/06 22:06:10.326|M|Server contact function complete: Low Power mode shutdown is eligible now
-2021/02/06 22:06:10.327|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 110
-2021/02/06 22:06:10.328|M|====================== Cloud Server Complete ===============
-2021/02/06 22:06:10.329|M|Remove RAW DATA File
-2021/02/06 22:06:10.331|M|==================== Sleep inhibited due to config file ===============
+2021/02/08 15:02:29.341|M|ALG: relative humidity value: 17.35
+2021/02/08 15:02:29.342|M|======================JSON File Prepared ============================
+2021/02/08 15:02:29.343|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/08 15:02:29.344|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/08 15:02:29.345|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/08 15:02:29.383|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75158/6
+2021/02/08 15:02:31.174|M|Server Response: HTTP Code = 304.
+2021/02/08 15:02:31.175|M|Server Response: Config file not modified.
+2021/02/08 15:02:31.179|M|APP: Config version not changed. result = 10212
+2021/02/08 15:02:31.182|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/08 15:02:31.183|M|ALG: Send Pending Reports ...
+2021/02/08 15:02:31.242|M|ALG:   0.4 kB file zips to   0.4 kB
+2021/02/08 15:02:31.243|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210208_150227.json' to '/mnt/data/lvm/json_archive/output_20210208_150227.zip'.
+2021/02/08 15:02:31.253|M|CLOUD: Use ZIP Format : YES
+2021/02/08 15:02:31.254|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/08 15:02:31.254|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/08 15:02:31.255|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/08 15:02:31.256|M|CLOUD: Perform CURL Post
+2021/02/08 15:02:33.093|M|CLOUD: CURL post completed, response = 0
+2021/02/08 15:02:33.094|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/08 15:02:33.095|M|CLOUD: CURL formfree completed
+2021/02/08 15:02:33.096|M|CLOUD: Server Response is GOOD
+2021/02/08 15:02:33.100|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210208_150227.zip'
+2021/02/08 15:02:33.102|M|ALG: 1 reports was sent successfully.
+2021/02/08 15:02:33.103|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/08 15:02:33.104|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 87
+2021/02/08 15:02:33.105|M|====================== Cloud Server Complete ===============
+2021/02/08 15:02:33.106|M|==================== Sleep inhibited due to config file ===============
+2021/02/08 15:03:30.063|M|RLY: CG Device type: 2
+2021/02/08 15:03:30.064|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:04:00.081|M|==========================Scan #1 triggered.==============================
+2021/02/08 15:04:00.082|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/08 15:04:00.094|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/08 15:04:00.095|M|Waiting till interface is up and connected ...
+2021/02/08 15:04:00.141|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:01.191|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:02.238|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:03.284|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:04.331|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:05.378|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:06.424|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:07.473|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:08.519|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:09.566|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:10.613|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:11.661|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:12.707|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:13.755|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:14.801|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:15.847|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:16.895|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:17.941|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:18.989|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:20.035|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:21.083|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:22.129|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:23.177|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:24.226|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:25.273|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:26.319|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:27.365|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:28.413|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:29.459|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:30.506|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:31.553|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:32.600|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:33.647|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:34.694|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:35.741|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:36.788|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:37.834|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:38.882|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:39.927|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:40.976|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:42.022|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:43.069|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:44.116|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:45.162|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:46.212|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:47.259|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:48.306|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:49.352|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:50.407|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:51.453|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:52.501|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:53.548|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:54.595|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:55.642|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:56.689|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:57.736|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:58.783|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:04:59.829|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:00.877|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:01.923|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:02.971|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:04.017|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:05.064|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:06.119|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:07.165|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:08.216|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:09.262|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:10.309|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:11.356|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:12.403|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:13.450|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:14.497|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:15.543|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:16.593|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:17.640|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:18.687|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:19.734|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:20.782|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:21.827|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:22.884|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:23.930|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:24.979|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:26.025|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:27.073|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:28.118|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:29.165|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:30.215|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:31.262|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:32.308|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:33.355|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:34.403|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:35.449|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:36.496|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:37.543|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:38.590|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:39.637|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:40.685|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:41.731|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:42.779|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:43.825|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:44.873|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:05:44.874|E|ERROR (Wait on Interface): Interface 'eth0' timed out
+2021/02/08 15:05:44.875|M|APP_LASERSCAN: WaitOnInterface returns 10007
+2021/02/08 15:05:44.952|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/08 15:05:44.953|M|ALG: Process COMPRESSED Scan
+2021/02/08 15:05:44.954|M|ALG: Collect data from UDP ...
+2021/02/08 15:05:44.955|M|ALG: Collect raw data with 3 attempts ...
+2021/02/08 15:05:44.956|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/08 15:05:44.957|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:05:47.973|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:05:47.974|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:05:47.975|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:05:47.976|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:05:47.976|M|ALG: Collect raw data. Attempt #2 ...
+2021/02/08 15:05:47.977|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:05:50.980|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:05:50.981|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:05:50.982|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:05:50.983|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:05:50.984|M|ALG: Collect raw data. Attempt #3 ...
+2021/02/08 15:05:50.985|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:05:54.000|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:05:54.012|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:05:54.013|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:05:54.014|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:05:54.015|M|ALG: Collect raw data failed with ec = 10202.
+2021/02/08 15:05:54.015|M|Will attempt a hard reset of LIDAR
+2021/02/08 15:05:54.016|M|Shutting down Lidar and restarting
+2021/02/08 15:05:54.017|M|RLY: CG Device type: 2
+2021/02/08 15:05:54.018|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:05:57.135|M|RLY: CG Device type: 2
+2021/02/08 15:05:57.136|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:05:57.173|M|Restarted LIDAR, will sleep to let it wake
+2021/02/08 15:06:27.174|M|LIDAR should now be awake
+2021/02/08 15:06:27.175|E|FAILED: Aborting Process compressed scan error code:10202
+2021/02/08 15:06:27.176|E|App_Main: Failed trying to get a compressed scan 10202
+2021/02/08 15:06:27.177|M|Scan Interval Info [1]: delayTillScan = 93, delayTillRelayOn = 63 (preheat = 30)
+2021/02/08 15:06:27.178|M|=========Scan Operation Complete ==================
+2021/02/08 15:06:27.179|M|RLY: CG Device type: 2
+2021/02/08 15:06:27.180|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:06:27.217|M|========= Building JSON ==================
+2021/02/08 15:06:27.218|M|Building JSON: Dump report(s) to file...
+2021/02/08 15:06:27.219|M|Building JSON: report.raw_scan_output.pointsCount         = 0
+2021/02/08 15:06:27.220|M|Building JSON: report.compressed_scan_output.pointsCount  = 0
+2021/02/08 15:06:27.221|M|Building JSON -- temp history
+2021/02/08 15:06:27.228|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/08 15:06:27.229|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:06:28.232|M|Temp Humid Sensor Values:    Humid:17.42 RH, C:23.02 C, F:73.43 F
+2021/02/08 15:06:28.239|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:06:29.242|M|Temp Humid Sensor Values:    Humid:17.40 RH, C:23.00 C, F:73.40 F
+2021/02/08 15:06:29.243|M|c: 22.999924, f: 73.399864, h: 17.395285
+2021/02/08 15:06:29.250|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/08 15:06:29.252|M|Building JSON -- Cell Status
+2021/02/08 15:06:29.306|M|WWAN signal strength is -116, ecio quality is -13
+2021/02/08 15:06:29.309|M|Building JSON: CloudGate supply voltage in mV: 11681
+2021/02/08 15:06:29.310|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/08 15:06:29.311|M|ALG: is relativeHumidity valid?: 0
+2021/02/08 15:06:29.312|M|ALG: relative humidity value: 17.40
+2021/02/08 15:06:29.313|M|======================JSON File Prepared ============================
+2021/02/08 15:06:29.314|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/08 15:06:29.315|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/08 15:06:29.315|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/08 15:06:29.325|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75158/6
+2021/02/08 15:06:30.908|M|Server Response: HTTP Code = 304.
+2021/02/08 15:06:30.909|M|Server Response: Config file not modified.
+2021/02/08 15:06:30.913|M|APP: Config version not changed. result = 10212
+2021/02/08 15:06:30.915|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/08 15:06:30.915|M|ALG: Send Pending Reports ...
+2021/02/08 15:06:30.974|M|ALG:   0.4 kB file zips to   0.4 kB
+2021/02/08 15:06:30.975|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210208_150627.json' to '/mnt/data/lvm/json_archive/output_20210208_150627.zip'.
+2021/02/08 15:06:30.985|M|CLOUD: Use ZIP Format : YES
+2021/02/08 15:06:30.986|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/08 15:06:30.987|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/08 15:06:31.005|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/08 15:06:31.006|M|CLOUD: Perform CURL Post
+2021/02/08 15:06:34.425|M|CLOUD: CURL post completed, response = 0
+2021/02/08 15:06:34.426|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/08 15:06:34.427|M|CLOUD: CURL formfree completed
+2021/02/08 15:06:34.427|M|CLOUD: Server Response is GOOD
+2021/02/08 15:06:34.432|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210208_150627.zip'
+2021/02/08 15:06:34.434|M|ALG: 1 reports was sent successfully.
+2021/02/08 15:06:34.435|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/08 15:06:34.436|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 86
+2021/02/08 15:06:34.437|M|====================== Cloud Server Complete ===============
+2021/02/08 15:06:34.437|M|==================== Sleep inhibited due to config file ===============
+2021/02/08 15:07:30.091|M|RLY: CG Device type: 2
+2021/02/08 15:07:30.092|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:08:00.014|M|==========================Scan #1 triggered.==============================
+2021/02/08 15:08:00.015|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/08 15:08:00.027|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/08 15:08:00.028|M|Waiting till interface is up and connected ...
+2021/02/08 15:08:00.074|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:01.121|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:02.167|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:03.215|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:04.270|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:05.317|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:06.363|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:07.411|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:08.457|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:09.503|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:10.551|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:11.597|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:12.644|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:13.691|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:14.738|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:15.785|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:16.832|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:17.880|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:18.927|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:19.974|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:21.021|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:22.067|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:23.115|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:24.160|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:25.207|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:26.257|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:27.304|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:28.350|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:29.397|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:30.444|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:31.490|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:32.538|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:33.584|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:34.633|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:35.680|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:36.729|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:37.795|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:38.842|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:39.934|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:40.982|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:42.030|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:43.076|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:44.124|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:45.170|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:46.217|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:47.266|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:48.318|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:49.365|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:50.412|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:51.458|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:52.505|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:53.560|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:54.606|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:55.654|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:56.703|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:57.751|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:58.809|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:08:59.857|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:00.904|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:01.952|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:02.999|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:04.060|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:05.106|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:06.162|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:07.208|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:08.258|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:09.320|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:10.367|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:11.413|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:12.460|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:13.506|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:14.564|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:15.610|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:16.658|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:17.704|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:18.752|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:19.831|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:20.877|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:21.925|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:22.972|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:24.018|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:25.083|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:26.130|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:27.176|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:28.223|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:29.273|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:30.319|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:31.377|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:32.424|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:33.470|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:34.516|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:35.564|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:36.626|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:37.673|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:38.721|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:39.767|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:40.813|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:41.861|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:42.907|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:43.955|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:45.013|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:09:45.014|E|ERROR (Wait on Interface): Interface 'eth0' timed out
+2021/02/08 15:09:45.015|M|APP_LASERSCAN: WaitOnInterface returns 10007
+2021/02/08 15:09:45.150|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/08 15:09:45.151|M|ALG: Process COMPRESSED Scan
+2021/02/08 15:09:45.152|M|ALG: Collect data from UDP ...
+2021/02/08 15:09:45.153|M|ALG: Collect raw data with 3 attempts ...
+2021/02/08 15:09:45.154|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/08 15:09:45.154|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:09:48.170|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:09:48.171|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:09:48.173|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:09:48.173|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:09:48.174|M|ALG: Collect raw data. Attempt #2 ...
+2021/02/08 15:09:48.175|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:09:51.180|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:09:51.181|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:09:51.182|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:09:51.183|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:09:51.184|M|ALG: Collect raw data. Attempt #3 ...
+2021/02/08 15:09:51.185|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:09:54.200|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:09:54.201|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:09:54.202|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:09:54.203|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:09:54.204|M|ALG: Collect raw data failed with ec = 10202.
+2021/02/08 15:09:54.205|M|Will attempt a hard reset of LIDAR
+2021/02/08 15:09:54.206|M|Shutting down Lidar and restarting
+2021/02/08 15:09:54.206|M|RLY: CG Device type: 2
+2021/02/08 15:09:54.207|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:09:57.244|M|RLY: CG Device type: 2
+2021/02/08 15:09:57.245|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:09:57.283|M|Restarted LIDAR, will sleep to let it wake
+2021/02/08 15:10:27.285|M|LIDAR should now be awake
+2021/02/08 15:10:27.286|E|FAILED: Aborting Process compressed scan error code:10202
+2021/02/08 15:10:27.286|E|App_Main: Failed trying to get a compressed scan 10202
+2021/02/08 15:10:27.287|M|Scan Interval Info [1]: delayTillScan = 93, delayTillRelayOn = 63 (preheat = 30)
+2021/02/08 15:10:27.289|M|=========Scan Operation Complete ==================
+2021/02/08 15:10:27.290|M|RLY: CG Device type: 2
+2021/02/08 15:10:27.290|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:10:27.326|M|========= Building JSON ==================
+2021/02/08 15:10:27.327|M|Building JSON: Dump report(s) to file...
+2021/02/08 15:10:27.351|M|Building JSON: report.raw_scan_output.pointsCount         = 0
+2021/02/08 15:10:27.352|M|Building JSON: report.compressed_scan_output.pointsCount  = 0
+2021/02/08 15:10:27.353|M|Building JSON -- temp history
+2021/02/08 15:10:27.360|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/08 15:10:27.361|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:10:28.370|M|Temp Humid Sensor Values:    Humid:17.38 RH, C:23.03 C, F:73.45 F
+2021/02/08 15:10:28.377|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:10:29.380|M|Temp Humid Sensor Values:    Humid:17.35 RH, C:23.03 C, F:73.45 F
+2021/02/08 15:10:29.382|M|c: 23.029297, f: 73.452736, h: 17.349508
+2021/02/08 15:10:29.389|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/08 15:10:29.391|M|Building JSON -- Cell Status
+2021/02/08 15:10:29.446|M|WWAN signal strength is -116, ecio quality is -13
+2021/02/08 15:10:29.448|M|Building JSON: CloudGate supply voltage in mV: 11681
+2021/02/08 15:10:29.450|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/08 15:10:29.451|M|ALG: is relativeHumidity valid?: 0
+2021/02/08 15:10:29.452|M|ALG: relative humidity value: 17.35
+2021/02/08 15:10:29.453|M|======================JSON File Prepared ============================
+2021/02/08 15:10:29.454|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/08 15:10:29.455|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/08 15:10:29.456|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/08 15:10:29.465|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75158/6
+2021/02/08 15:10:31.110|M|Server Response: HTTP Code = 304.
+2021/02/08 15:10:31.111|M|Server Response: Config file not modified.
+2021/02/08 15:10:31.115|M|APP: Config version not changed. result = 10212
+2021/02/08 15:10:31.116|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/08 15:10:31.117|M|ALG: Send Pending Reports ...
+2021/02/08 15:10:31.175|M|ALG:   0.4 kB file zips to   0.4 kB
+2021/02/08 15:10:31.191|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210208_151027.json' to '/mnt/data/lvm/json_archive/output_20210208_151027.zip'.
+2021/02/08 15:10:31.200|M|CLOUD: Use ZIP Format : YES
+2021/02/08 15:10:31.201|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/08 15:10:31.202|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/08 15:10:31.203|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/08 15:10:31.204|M|CLOUD: Perform CURL Post
+2021/02/08 15:10:33.028|M|CLOUD: CURL post completed, response = 0
+2021/02/08 15:10:33.029|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/08 15:10:33.030|M|CLOUD: CURL formfree completed
+2021/02/08 15:10:33.031|M|CLOUD: Server Response is GOOD
+2021/02/08 15:10:33.035|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210208_151027.zip'
+2021/02/08 15:10:33.037|M|ALG: 1 reports was sent successfully.
+2021/02/08 15:10:33.038|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/08 15:10:33.039|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 87
+2021/02/08 15:10:33.040|M|====================== Cloud Server Complete ===============
+2021/02/08 15:10:33.041|M|==================== Sleep inhibited due to config file ===============
+2021/02/08 15:11:30.095|M|RLY: CG Device type: 2
+2021/02/08 15:11:30.096|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:12:00.030|M|==========================Scan #1 triggered.==============================
+2021/02/08 15:12:00.031|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/08 15:12:00.043|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/08 15:12:00.055|M|Waiting till interface is up and connected ...
+2021/02/08 15:12:00.113|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:01.160|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:02.206|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:03.256|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:04.303|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:05.350|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:06.407|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:07.454|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:08.501|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:09.548|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:10.594|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:11.657|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:12.704|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:13.751|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:14.798|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:15.845|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:16.891|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:17.938|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:18.986|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:20.034|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:21.081|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:22.128|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:23.175|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:24.222|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:25.271|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:26.317|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:27.364|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:28.410|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:29.457|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:30.504|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:31.551|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:32.597|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:33.644|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:34.691|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:35.738|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:36.785|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:37.832|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:38.878|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:39.926|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:40.974|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:42.020|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:43.068|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:44.115|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:45.163|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:46.209|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:47.256|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:48.306|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:49.352|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:50.398|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:51.446|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:52.492|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:53.537|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:54.586|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:55.632|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:56.679|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:57.725|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:58.773|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:12:59.819|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:00.866|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:01.913|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:02.961|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:04.008|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:05.055|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:06.103|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:07.150|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:08.196|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:09.243|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:10.293|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:11.339|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:12.386|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:13.431|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:14.479|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:15.525|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:16.573|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:17.619|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:18.666|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:19.712|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:20.760|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:21.806|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:22.853|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:23.900|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:24.947|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:25.995|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:27.053|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:28.099|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:29.148|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:30.194|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:31.241|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:32.290|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:33.336|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:34.383|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:35.429|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:36.477|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:37.523|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:38.570|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:39.616|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:40.663|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:41.710|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:42.758|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:43.804|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:44.851|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:13:44.852|E|ERROR (Wait on Interface): Interface 'eth0' timed out
+2021/02/08 15:13:44.853|M|APP_LASERSCAN: WaitOnInterface returns 10007
+2021/02/08 15:13:44.930|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/08 15:13:44.931|M|ALG: Process COMPRESSED Scan
+2021/02/08 15:13:44.948|M|ALG: Collect data from UDP ...
+2021/02/08 15:13:44.949|M|ALG: Collect raw data with 3 attempts ...
+2021/02/08 15:13:44.950|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/08 15:13:44.951|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:13:48.010|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:13:48.011|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:13:48.013|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:13:48.013|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:13:48.014|M|ALG: Collect raw data. Attempt #2 ...
+2021/02/08 15:13:48.015|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:13:51.020|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:13:51.021|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:13:51.022|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:13:51.023|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:13:51.024|M|ALG: Collect raw data. Attempt #3 ...
+2021/02/08 15:13:51.025|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:13:54.042|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:13:54.043|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:13:54.044|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:13:54.045|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:13:54.045|M|ALG: Collect raw data failed with ec = 10202.
+2021/02/08 15:13:54.046|M|Will attempt a hard reset of LIDAR
+2021/02/08 15:13:54.047|M|Shutting down Lidar and restarting
+2021/02/08 15:13:54.048|M|RLY: CG Device type: 2
+2021/02/08 15:13:54.048|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:13:57.084|M|RLY: CG Device type: 2
+2021/02/08 15:13:57.086|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:13:57.121|M|Restarted LIDAR, will sleep to let it wake
+2021/02/08 15:14:27.122|M|LIDAR should now be awake
+2021/02/08 15:14:27.123|E|FAILED: Aborting Process compressed scan error code:10202
+2021/02/08 15:14:27.124|E|App_Main: Failed trying to get a compressed scan 10202
+2021/02/08 15:14:27.125|M|Scan Interval Info [1]: delayTillScan = 93, delayTillRelayOn = 63 (preheat = 30)
+2021/02/08 15:14:27.126|M|=========Scan Operation Complete ==================
+2021/02/08 15:14:27.127|M|RLY: CG Device type: 2
+2021/02/08 15:14:27.128|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:14:27.165|M|========= Building JSON ==================
+2021/02/08 15:14:27.166|M|Building JSON: Dump report(s) to file...
+2021/02/08 15:14:27.167|M|Building JSON: report.raw_scan_output.pointsCount         = 0
+2021/02/08 15:14:27.168|M|Building JSON: report.compressed_scan_output.pointsCount  = 0
+2021/02/08 15:14:27.170|M|Building JSON -- temp history
+2021/02/08 15:14:27.176|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/08 15:14:27.179|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:14:28.181|M|Temp Humid Sensor Values:    Humid:17.37 RH, C:23.04 C, F:73.48 F
+2021/02/08 15:14:28.188|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:14:29.191|M|Temp Humid Sensor Values:    Humid:17.38 RH, C:23.06 C, F:73.50 F
+2021/02/08 15:14:29.192|M|c: 23.056000, f: 73.500801, h: 17.381552
+2021/02/08 15:14:29.199|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/08 15:14:29.200|M|Building JSON -- Cell Status
+2021/02/08 15:14:29.255|M|WWAN signal strength is -116, ecio quality is -13
+2021/02/08 15:14:29.258|M|Building JSON: CloudGate supply voltage in mV: 11681
+2021/02/08 15:14:29.259|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/08 15:14:29.260|M|ALG: is relativeHumidity valid?: 0
+2021/02/08 15:14:29.261|M|ALG: relative humidity value: 17.38
+2021/02/08 15:14:29.262|M|======================JSON File Prepared ============================
+2021/02/08 15:14:29.289|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/08 15:14:29.290|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/08 15:14:29.291|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/08 15:14:29.334|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75158/6
+2021/02/08 15:14:31.026|M|Server Response: HTTP Code = 304.
+2021/02/08 15:14:31.027|M|Server Response: Config file not modified.
+2021/02/08 15:14:31.032|M|APP: Config version not changed. result = 10212
+2021/02/08 15:14:31.033|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/08 15:14:31.034|M|ALG: Send Pending Reports ...
+2021/02/08 15:14:31.092|M|ALG:   0.4 kB file zips to   0.4 kB
+2021/02/08 15:14:31.093|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210208_151427.json' to '/mnt/data/lvm/json_archive/output_20210208_151427.zip'.
+2021/02/08 15:14:31.103|M|CLOUD: Use ZIP Format : YES
+2021/02/08 15:14:31.104|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/08 15:14:31.104|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/08 15:14:31.105|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/08 15:14:31.106|M|CLOUD: Perform CURL Post
+2021/02/08 15:14:32.946|M|CLOUD: CURL post completed, response = 0
+2021/02/08 15:14:32.947|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/08 15:14:32.948|M|CLOUD: CURL formfree completed
+2021/02/08 15:14:32.949|M|CLOUD: Server Response is GOOD
+2021/02/08 15:14:32.953|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210208_151427.zip'
+2021/02/08 15:14:32.955|M|ALG: 1 reports was sent successfully.
+2021/02/08 15:14:32.956|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/08 15:14:32.957|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 88
+2021/02/08 15:14:32.957|M|====================== Cloud Server Complete ===============
+2021/02/08 15:14:32.958|M|==================== Sleep inhibited due to config file ===============
+2021/02/08 15:15:30.038|M|RLY: CG Device type: 2
+2021/02/08 15:15:30.040|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:16:00.053|M|==========================Scan #1 triggered.==============================
+2021/02/08 15:16:00.054|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/08 15:16:00.066|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/08 15:16:00.067|M|Waiting till interface is up and connected ...
+2021/02/08 15:16:00.114|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:01.161|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:02.207|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:03.254|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:04.305|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:05.351|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:06.398|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:07.444|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:08.492|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:09.538|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:10.585|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:11.631|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:12.678|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:13.725|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:14.773|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:15.819|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:16.867|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:17.913|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:18.961|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:20.008|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:21.054|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:22.102|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:23.148|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:24.196|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:25.242|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:26.292|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:27.338|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:28.385|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:29.431|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:30.479|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:31.525|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:32.572|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:33.618|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:34.666|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:35.712|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:36.758|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:37.806|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:38.852|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:39.900|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:40.946|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:41.995|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:43.041|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:44.089|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:45.135|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:46.183|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:47.229|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:48.277|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:49.327|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:50.374|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:51.423|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:52.471|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:53.517|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:54.563|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:55.610|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:56.664|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:57.712|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:58.758|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:16:59.806|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:00.852|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:01.919|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:02.966|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:04.014|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:05.060|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:06.108|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:07.164|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:08.212|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:09.258|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:10.310|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:11.356|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:12.414|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:13.460|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:14.508|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:15.553|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:16.601|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:17.647|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:18.695|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:19.741|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:20.789|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:21.835|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:22.883|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:23.929|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:24.977|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:26.024|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:27.071|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:28.117|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:29.175|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:30.221|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:31.267|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:32.318|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:33.365|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:34.412|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:35.458|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:36.506|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:37.552|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:38.600|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:39.646|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:40.693|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:41.739|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:42.787|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:43.833|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:44.881|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:17:44.882|E|ERROR (Wait on Interface): Interface 'eth0' timed out
+2021/02/08 15:17:44.883|M|APP_LASERSCAN: WaitOnInterface returns 10007
+2021/02/08 15:17:44.960|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/08 15:17:44.961|M|ALG: Process COMPRESSED Scan
+2021/02/08 15:17:44.962|M|ALG: Collect data from UDP ...
+2021/02/08 15:17:44.962|M|ALG: Collect raw data with 3 attempts ...
+2021/02/08 15:17:44.963|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/08 15:17:44.964|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:17:47.980|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:17:47.981|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:17:47.982|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:17:47.983|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:17:47.984|M|ALG: Collect raw data. Attempt #2 ...
+2021/02/08 15:17:47.985|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:17:50.990|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:17:50.991|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:17:50.992|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:17:50.993|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:17:50.994|M|ALG: Collect raw data. Attempt #3 ...
+2021/02/08 15:17:50.994|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:17:54.010|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:17:54.011|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:17:54.012|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:17:54.030|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:17:54.031|M|ALG: Collect raw data failed with ec = 10202.
+2021/02/08 15:17:54.031|M|Will attempt a hard reset of LIDAR
+2021/02/08 15:17:54.032|M|Shutting down Lidar and restarting
+2021/02/08 15:17:54.033|M|RLY: CG Device type: 2
+2021/02/08 15:17:54.034|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:17:57.145|M|RLY: CG Device type: 2
+2021/02/08 15:17:57.147|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:17:57.184|M|Restarted LIDAR, will sleep to let it wake
+2021/02/08 15:18:27.185|M|LIDAR should now be awake
+2021/02/08 15:18:27.186|E|FAILED: Aborting Process compressed scan error code:10202
+2021/02/08 15:18:27.187|E|App_Main: Failed trying to get a compressed scan 10202
+2021/02/08 15:18:27.188|M|Scan Interval Info [1]: delayTillScan = 93, delayTillRelayOn = 63 (preheat = 30)
+2021/02/08 15:18:27.189|M|=========Scan Operation Complete ==================
+2021/02/08 15:18:27.190|M|RLY: CG Device type: 2
+2021/02/08 15:18:27.191|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:18:27.226|M|========= Building JSON ==================
+2021/02/08 15:18:27.227|M|Building JSON: Dump report(s) to file...
+2021/02/08 15:18:27.228|M|Building JSON: report.raw_scan_output.pointsCount         = 0
+2021/02/08 15:18:27.228|M|Building JSON: report.compressed_scan_output.pointsCount  = 0
+2021/02/08 15:18:27.230|M|Building JSON -- temp history
+2021/02/08 15:18:27.237|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/08 15:18:27.238|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:18:28.240|M|Temp Humid Sensor Values:    Humid:16.73 RH, C:23.06 C, F:73.50 F
+2021/02/08 15:18:28.247|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:18:29.251|M|Temp Humid Sensor Values:    Humid:16.71 RH, C:23.04 C, F:73.48 F
+2021/02/08 15:18:29.252|M|c: 23.042648, f: 73.476768, h: 16.713207
+2021/02/08 15:18:29.259|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/08 15:18:29.260|M|Building JSON -- Cell Status
+2021/02/08 15:18:29.318|M|WWAN signal strength is -116, ecio quality is -13
+2021/02/08 15:18:29.321|M|Building JSON: CloudGate supply voltage in mV: 11681
+2021/02/08 15:18:29.323|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/08 15:18:29.323|M|ALG: is relativeHumidity valid?: 0
+2021/02/08 15:18:29.324|M|ALG: relative humidity value: 16.71
+2021/02/08 15:18:29.325|M|======================JSON File Prepared ============================
+2021/02/08 15:18:29.326|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/08 15:18:29.327|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/08 15:18:29.328|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/08 15:18:29.337|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75158/6
+2021/02/08 15:18:31.395|M|Server Response: HTTP Code = 304.
+2021/02/08 15:18:31.396|M|Server Response: Config file not modified.
+2021/02/08 15:18:31.401|M|APP: Config version not changed. result = 10212
+2021/02/08 15:18:31.402|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/08 15:18:31.403|M|ALG: Send Pending Reports ...
+2021/02/08 15:18:31.460|M|ALG:   0.4 kB file zips to   0.4 kB
+2021/02/08 15:18:31.461|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210208_151827.json' to '/mnt/data/lvm/json_archive/output_20210208_151827.zip'.
+2021/02/08 15:18:31.472|M|CLOUD: Use ZIP Format : YES
+2021/02/08 15:18:31.473|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/08 15:18:31.474|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/08 15:18:31.475|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/08 15:18:31.490|M|CLOUD: Perform CURL Post
+2021/02/08 15:18:33.955|M|CLOUD: CURL post completed, response = 0
+2021/02/08 15:18:33.956|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/08 15:18:33.957|M|CLOUD: CURL formfree completed
+2021/02/08 15:18:33.958|M|CLOUD: Server Response is GOOD
+2021/02/08 15:18:33.963|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210208_151827.zip'
+2021/02/08 15:18:33.964|M|ALG: 1 reports was sent successfully.
+2021/02/08 15:18:33.965|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/08 15:18:33.966|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 87
+2021/02/08 15:18:33.967|M|====================== Cloud Server Complete ===============
+2021/02/08 15:18:33.968|M|==================== Sleep inhibited due to config file ===============
+2021/02/08 15:19:30.060|M|RLY: CG Device type: 2
+2021/02/08 15:19:30.061|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:20:00.087|M|==========================Scan #1 triggered.==============================
+2021/02/08 15:20:00.088|M|APP_LASERSCAN: set ethernet interface enabled = TRUE
+2021/02/08 15:20:00.101|M|APP_LASERSCAN: Set eth0 operation error code: 0
+2021/02/08 15:20:00.102|M|Waiting till interface is up and connected ...
+2021/02/08 15:20:00.148|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:01.196|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:02.242|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:03.288|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:04.338|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:05.384|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:06.432|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:07.478|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:08.526|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:09.572|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:10.624|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:11.670|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:12.718|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:13.764|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:14.812|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:15.858|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:16.906|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:17.951|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:19.000|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:20.047|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:21.094|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:22.140|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:23.186|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:24.234|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:25.280|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:26.330|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:27.376|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:28.423|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:29.470|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:30.517|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:31.563|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:32.611|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:33.657|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:34.705|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:35.751|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:36.798|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:37.845|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:38.892|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:39.938|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:40.984|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:42.032|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:43.078|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:44.126|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:45.172|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:46.219|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:47.265|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:48.313|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:49.362|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:50.409|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:51.456|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:52.503|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:53.550|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:54.596|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:55.653|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:56.701|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:57.747|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:58.813|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:20:59.859|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:00.907|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:01.953|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:03.002|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:04.048|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:05.094|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:06.141|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:07.187|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:08.234|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:09.280|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:10.328|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:11.377|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:12.424|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:13.470|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:14.517|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:15.564|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:16.610|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:17.657|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:18.704|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:19.752|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:20.798|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:21.845|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:22.892|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:23.939|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:24.986|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:26.034|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:27.080|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:28.127|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:29.173|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:30.221|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:31.277|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:32.325|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:33.374|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:34.421|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:35.467|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:36.514|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:37.562|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:38.608|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:39.655|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:40.702|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:41.748|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:42.795|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:43.843|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:44.888|M|Interface : eth0. EN: YES, CFG: YES, CONN:  NO 
+2021/02/08 15:21:44.890|E|ERROR (Wait on Interface): Interface 'eth0' timed out
+2021/02/08 15:21:44.891|M|APP_LASERSCAN: WaitOnInterface returns 10007
+2021/02/08 15:21:44.969|M|*** PROCESS COMPRESSED SCAN ***
+2021/02/08 15:21:44.970|M|ALG: Process COMPRESSED Scan
+2021/02/08 15:21:44.971|M|ALG: Collect data from UDP ...
+2021/02/08 15:21:44.972|M|ALG: Collect raw data with 3 attempts ...
+2021/02/08 15:21:44.973|M|ALG: Collect raw data. Attempt #1 ...
+2021/02/08 15:21:44.974|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:21:47.991|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:21:47.992|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:21:47.993|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:21:47.994|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:21:47.995|M|ALG: Collect raw data. Attempt #2 ...
+2021/02/08 15:21:47.996|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:21:51.000|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:21:51.001|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:21:51.002|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:21:51.003|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:21:51.004|M|ALG: Collect raw data. Attempt #3 ...
+2021/02/08 15:21:51.005|M|ALG: GET VLP settings via HTTP first time
+2021/02/08 15:21:54.022|M|VLP16: PostHttpData : url='http://192.168.1.201/cgi/settings.json', data='(null)' result = 7
+2021/02/08 15:21:54.022|E|ERROR:VLP16: Curl couldn't post
+2021/02/08 15:21:54.024|E|ERROR: ALG: GET VLP settings 1 failed.
+2021/02/08 15:21:54.024|E|Couldn't set up VLP16 LIDAR.   BooHoo!
+2021/02/08 15:21:54.025|M|ALG: Collect raw data failed with ec = 10202.
+2021/02/08 15:21:54.026|M|Will attempt a hard reset of LIDAR
+2021/02/08 15:21:54.027|M|Shutting down Lidar and restarting
+2021/02/08 15:21:54.028|M|RLY: CG Device type: 2
+2021/02/08 15:21:54.028|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:21:57.064|M|RLY: CG Device type: 2
+2021/02/08 15:21:57.065|M|RLY: CG_MINI Relay: turn on via GPIO203
+2021/02/08 15:21:57.101|M|Restarted LIDAR, will sleep to let it wake
+2021/02/08 15:22:27.102|M|LIDAR should now be awake
+2021/02/08 15:22:27.103|E|FAILED: Aborting Process compressed scan error code:10202
+2021/02/08 15:22:27.104|E|App_Main: Failed trying to get a compressed scan 10202
+2021/02/08 15:22:27.105|M|Scan Interval Info [1]: delayTillScan = 93, delayTillRelayOn = 63 (preheat = 30)
+2021/02/08 15:22:27.106|M|=========Scan Operation Complete ==================
+2021/02/08 15:22:27.107|M|RLY: CG Device type: 2
+2021/02/08 15:22:27.108|M|RLY: CG_MINI Relay: turn off via GPIO203
+2021/02/08 15:22:27.202|M|========= Building JSON ==================
+2021/02/08 15:22:27.203|M|Building JSON: Dump report(s) to file...
+2021/02/08 15:22:27.204|M|Building JSON: report.raw_scan_output.pointsCount         = 0
+2021/02/08 15:22:27.221|M|Building JSON: report.compressed_scan_output.pointsCount  = 0
+2021/02/08 15:22:27.222|M|Building JSON -- temp history
+2021/02/08 15:22:27.269|M|TTTTTTTTTTTTTTTTTTTTTTT-- In Temp ---TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+2021/02/08 15:22:27.270|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:22:28.283|M|Temp Humid Sensor Values:    Humid:16.56 RH, C:23.03 C, F:73.45 F
+2021/02/08 15:22:28.291|M|I2C open device, attempting to connect to device at address 44
+2021/02/08 15:22:29.294|M|Temp Humid Sensor Values:    Humid:16.56 RH, C:23.04 C, F:73.48 F
+2021/02/08 15:22:29.295|M|c: 23.042648, f: 73.476768, h: 16.562141
+2021/02/08 15:22:29.303|M|ERROR READ LIDAR: CG device 2 type CG_MINI Not Recognized
+2021/02/08 15:22:29.304|M|Building JSON -- Cell Status
+2021/02/08 15:22:29.362|M|WWAN signal strength is -116, ecio quality is -13
+2021/02/08 15:22:29.364|M|Building JSON: CloudGate supply voltage in mV: 11681
+2021/02/08 15:22:29.366|M|ALG: adding JSON element for relativeHumidity - REMOVE THIS LINE 68 in ALG.c
+2021/02/08 15:22:29.366|M|ALG: is relativeHumidity valid?: 0
+2021/02/08 15:22:29.367|M|ALG: relative humidity value: 16.56
+2021/02/08 15:22:29.368|M|======================JSON File Prepared ============================
+2021/02/08 15:22:29.370|M|====================== Cloud Server Contact Interval Triggered.===============
+2021/02/08 15:22:29.371|M|APP: Download Config File from  Server https://devices.linevision.co/v3.0.1 ...
+2021/02/08 15:22:29.372|M|Download Config from server 'https://devices.linevision.co/v3.0.1'.
+2021/02/08 15:22:29.382|M|URL: https://devices.linevision.co/v3.0.1/GetConfig/KM4AK75158/6
+2021/02/08 15:22:30.959|M|Server Response: HTTP Code = 304.
+2021/02/08 15:22:30.960|M|Server Response: Config file not modified.
+2021/02/08 15:22:30.964|M|APP: Config version not changed. result = 10212
+2021/02/08 15:22:30.965|M|APP: Post pending reports to server 'https://devices.linevision.co/v3.0.1' ...
+2021/02/08 15:22:30.966|M|ALG: Send Pending Reports ...
+2021/02/08 15:22:31.025|M|ALG:   0.4 kB file zips to   0.4 kB
+2021/02/08 15:22:31.026|M|CLOUD: Successfully compress file '/mnt/data/lvm/json_archive/output_20210208_152227.json' to '/mnt/data/lvm/json_archive/output_20210208_152227.zip'.
+2021/02/08 15:22:31.036|M|CLOUD: Use ZIP Format : YES
+2021/02/08 15:22:31.037|M|CLOUD: URL: https://devices.linevision.co/v3.0.1/PostZipData:443
+2021/02/08 15:22:31.038|M|CLOUD: POST Request Content Type: multipart/form-data
+2021/02/08 15:22:31.039|M|CLOUD: set CURL timeout to 10 seconds
+2021/02/08 15:22:31.040|M|CLOUD: Perform CURL Post
+2021/02/08 15:22:32.877|M|CLOUD: CURL post completed, response = 0
+2021/02/08 15:22:32.878|M|CLOUD: Perform CURL formfree (clear form data)
+2021/02/08 15:22:32.879|M|CLOUD: CURL formfree completed
+2021/02/08 15:22:32.880|M|CLOUD: Server Response is GOOD
+2021/02/08 15:22:32.884|M|CLOUD: Remove the zip file '/mnt/data/lvm/json_archive/output_20210208_152227.zip'
+2021/02/08 15:22:32.886|M|ALG: 1 reports was sent successfully.
+2021/02/08 15:22:32.887|M|Server contact function complete: Low Power mode shutdown is eligible now
+2021/02/08 15:22:32.888|M|Server contact function complete, Server Contact Interval Info: delayTillNextReport = 88
+2021/02/08 15:22:32.888|M|====================== Cloud Server Complete ===============
+2021/02/08 15:22:32.890|M|==================== Sleep inhibited due to config file ===============
